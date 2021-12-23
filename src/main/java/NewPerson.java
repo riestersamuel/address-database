@@ -1,6 +1,5 @@
-package org.example;
 import java.util.Scanner;
-public class newperson {
+public class NewPerson {
     public static void main(String[] args) {
         try (final Scanner scan = new Scanner(System.in)) {
             System.out.println("Enter your name: ");
