@@ -1,3 +1,10 @@
+<<<<<<< HEAD
+public class Person {
+
+    public static void main(String[] args) {
+        final NewPerson person = new NewPerson();
+       // final DeletePerson deletePerson = DeletePerson();
+=======
 import java.util.Scanner;
 
 public class Person {
@@ -31,5 +38,6 @@ public class Person {
             final String number = scan.next();
             System.out.println("phone: "+number);
         }
+>>>>>>> origin/main
     }
 }
