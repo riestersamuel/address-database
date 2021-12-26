@@ -27,9 +27,11 @@ public class AdressDatabase {
                 break;
             case 2:
                 System.out.println("Starte Methode 2");
+                final NewPerson person = new NewPerson();
                 break;
             case 3:
                 System.out.println("Starte Methode 3");
+                final DeletePerson deletePerson = new DeletePerson();
                 break;
             case 4:
                 System.out.println("Starte Methode 4");
