@@ -2,7 +2,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 // Klasse um Text in einer Datei abzuspeichern
 public class Writer {
-        public static void main(String[] args) {
+        public Writer () {
             NewPerson person1 = new NewPerson();
             String name = person1.name;
             String mail = person1.mail;

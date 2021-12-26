@@ -27,7 +27,7 @@ public class AdressDatabase {
                 break;
             case 2:
                 System.out.println("Starte Methode 2");
-                final NewPerson person = new NewPerson();
+                final Writer person = new Writer();
                 break;
             case 3:
                 System.out.println("Starte Methode 3");
