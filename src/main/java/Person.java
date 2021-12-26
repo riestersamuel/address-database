@@ -1,43 +1,10 @@
-<<<<<<< HEAD
+
 public class Person {
 
     public static void main(String[] args) {
+        //Konstruktor aufrufen um eine Person hinzuzufügen
         final NewPerson person = new NewPerson();
-       // final DeletePerson deletePerson = DeletePerson();
-=======
-import java.util.Scanner;
+        //Konstruktor aufrufen um eine Person zu löschen
+        // final DeletePerson deletePerson = DeletePerson();
 
-public class Person {
-    String name, mail, number;
-
-    //Per Konstruktor
-    public Person(){
-        try (final Scanner scan = new Scanner(System.in)) {
-            System.out.println("Enter your name: ");
-            final String name = scan.next();
-            System.out.println(name);
-            System.out.println("Enter your mail address: ");
-            final String mail = scan.next();
-            System.out.println("mail: "+mail);
-            System.out.println("Enter your phone number: ");
-            final String number = scan.next();
-            System.out.println("phone: "+number);
-        }
-    }
-
-    //... oder lieber per Methode?
-    public static void addPerson(){
-        try (final Scanner scan = new Scanner(System.in)) {
-            System.out.println("Enter your name: ");
-            final String name = scan.next();
-            System.out.println(name);
-            System.out.println("Enter your mail address: ");
-            final String mail = scan.next();
-            System.out.println("mail: "+mail);
-            System.out.println("Enter your phone number: ");
-            final String number = scan.next();
-            System.out.println("phone: "+number);
-        }
->>>>>>> origin/main
-    }
-}
+    }}

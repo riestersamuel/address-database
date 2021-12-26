@@ -3,7 +3,7 @@ public class NewPerson {
     String name;
     String mail;
     String number;
-    //public static void main(String[] args) {
+    //Konstruktor um eine neue Person hinzuzufügen
     public NewPerson(){
 
         try (final Scanner scan = new Scanner(System.in)) {
