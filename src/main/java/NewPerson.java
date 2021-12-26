@@ -13,5 +13,4 @@ public class NewPerson {
             System.out.println("phone: "+number);
         }
     }
-
 }
