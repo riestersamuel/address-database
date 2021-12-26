@@ -6,8 +6,10 @@ public class DeletePerson {
             try (final Scanner scan = new Scanner(System.in)) {
                 System.out.println("Enter the name whose data should be deleted: ");
                 this.deletename = scan.next();
-                deletename = null;
-                System.out.println("name has been deleted");
+                //this.deletename = null;
+                System.out.println(deletename+" will be deleted!");
+                this.deletename = null;
+                System.out.println(deletename);
             }
         }
     }
