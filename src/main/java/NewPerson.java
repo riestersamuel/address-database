@@ -1,16 +1,22 @@
 import java.util.Scanner;
 public class NewPerson {
-    public static void main(String[] args) {
+    String name;
+    String mail;
+    String number;
+    //Konstruktor um eine neue Person hinzuzufügen
+    public NewPerson(){
+
         try (final Scanner scan = new Scanner(System.in)) {
             System.out.println("Enter your name: ");
-            final String name = scan.next();
+            this.name = scan.next();
             System.out.println(name);
             System.out.println("Enter your mail address: ");
-            final String mail = scan.next();
+            this.mail = scan.next();
             System.out.println("mail: "+mail);
             System.out.println("Enter your phone number: ");
-            final String number = scan.next();
+            this.number = scan.next();
             System.out.println("phone: "+number);
         }
+        }
     }
-}
+
