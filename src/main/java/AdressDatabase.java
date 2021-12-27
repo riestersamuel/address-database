@@ -67,6 +67,5 @@ public class AdressDatabase {
     public static void main(String[] args) throws IOException {
         instructions();
         convertNumberToMethod();
-        //Der Starttext und die Eingabe sollen automatisch nach dem Nutzen einer Methode wieder angezeigt werden
     }
 }
