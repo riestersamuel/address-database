@@ -10,9 +10,9 @@ public class DeletePerson {
     //Konstruktor um einen bereits vorhandenen Eintrag zu löschen
         String deletename;
         public DeletePerson() {
-            //NewPerson person = new NewPerson();
 
             try (final Scanner scan = new Scanner(System.in)) {
+                //Name eingeben, wessen Einträge gelöscht werden sollen
                 System.out.println("Enter the name whose data should be deleted: ");
                 this.deletename = scan.next();
                 System.out.println(deletename+" will be deleted!");
@@ -20,10 +20,13 @@ public class DeletePerson {
                 try {
                     //Zuerst zu löschende Zeile suchen
                     String myFileName = ".\\filewriter.csv";
+                    //bis jetzt ist die Zeile noch unentdeckt daher leer
                     int lineToBeDeleted = -1;
 
+                    //neue Liste mit allen Einträgen der Textdatei wird aufgerufen
                     List<String> allFileEntries = Files.readAllLines(Paths.get(myFileName));
 
+                    //solange i kleiner ist als die Anzahl der Zeilen wird der Name gesucht
                     for(int i=0; i<allFileEntries.size(); i++)
                     {
                         String myNextLine = allFileEntries.get(i);
@@ -38,25 +41,18 @@ public class DeletePerson {
                         //Zeile gefunden, jetzt Eintrag löschen
                         allFileEntries.remove(lineToBeDeleted);
                         FileWriter myFileWriter = new FileWriter(myFileName);
-                        BufferedWriter bufferedWriter = new BufferedWriter(myFileWriter);
+
                         //Komplette Datei schreiben, ohne den gelöschten Eintrag
                         for (String s : allFileEntries) {
-                            bufferedWriter.write(s + "\n");
+                            myFileWriter.write(s + "\n");
                         }
-                        bufferedWriter.flush();
+                        //schreibt den Eintrag wieder auf die Festplatte
+                        myFileWriter.flush();
                     }
                 }
                 catch(IOException ex)
                 { }
 
-                /*Das kann gelöscht werden
-                if (deletename==person.data[0]){
-                    person.data[0]="empty";
-                    person.data[1]="empty";
-                    person.data[2]="empty";
-                }*/
-               /*this.deletename = null;
-               System.out.println(deletename);*/
             }
         }
     }
