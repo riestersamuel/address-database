@@ -1,0 +1,3 @@
+Test
+Hi, das ist ne neue Linie. Beim ersten Mal newWriter.write() erzeugt es die Datei, aber immer danach wird sie überschrieben.
+Samuel riestersamuel@icloud.com +4915128992346 
