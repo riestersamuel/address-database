@@ -2,7 +2,7 @@ import java.io.FileReader;
 import java.io.IOException;
 // Klasse um Text aus einer Datei zu lesen
 class Reader {
-    public static void main(String[] args) throws IOException {
+    public Reader() throws IOException {
         // erstellt einen filereader
         FileReader input = new FileReader( "filewriter.txt");
 

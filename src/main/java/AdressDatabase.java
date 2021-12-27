@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.util.Scanner;
 
 public class AdressDatabase {
@@ -13,7 +14,7 @@ public class AdressDatabase {
         System.out.println("");
     }
 
-    public static void convertNumberToMethod() {
+    public static void convertNumberToMethod() throws IOException {
         //Der Nutzer soll eine Zahl eingegeben. Diese wird ruft dann die entsprechende Methode auf.
         System.out.println("Please enter a number: ");
         final Scanner scan = new Scanner(System.in);
@@ -21,6 +22,7 @@ public class AdressDatabase {
         switch (inputNumber) {
             case 0:
                 System.out.println("Starte Methode 0");
+                final Reader reader = new Reader();
                 break;
             case 1:
                 System.out.println("Starte Methode 1");
@@ -47,7 +49,7 @@ public class AdressDatabase {
         }
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         instructions();
         convertNumberToMethod();
     }
