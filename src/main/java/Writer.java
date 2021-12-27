@@ -10,7 +10,7 @@ public class Writer {
             //Klasse NewPerson wird aufgerufen, um neue Einträge zu erstellen.
             try {
                 // neuer Filewriter wird erstellt
-                FileWriter myWriter = new FileWriter("filewriter.txt");
+                FileWriter myWriter = new FileWriter("filewriter.csv");
                 // Die Einträge werden in einer Datei gespeichert.
                 myWriter.write(name + ", " + mail + ", " + number);
                 //schließt den Filewriter
