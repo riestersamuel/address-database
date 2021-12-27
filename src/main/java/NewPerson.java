@@ -1,12 +1,11 @@
 import java.util.Scanner;
 public class NewPerson {
-    String name;
-    String mail;
-    String number;
+    String name, mail, number;
     final String[] data = {"name","mail","number"};
+
+
     //Konstruktor um eine neue Person hinzuzufügen
     public NewPerson(){
-
         try (final Scanner scan = new Scanner(System.in)) {
             System.out.println("Enter your name: ");
             this.name = scan.next();
@@ -20,6 +19,9 @@ public class NewPerson {
             this.number = scan.next();
             data[2]=number;
             System.out.println("phone: "+number);
+            /* Ansatz um die Daten zu speichern:
+            String personInfo= name+", "+mail+", "+number;
+            FileIOwithSeparateMethods.write(personInfo);*/
         }
         }
     }
