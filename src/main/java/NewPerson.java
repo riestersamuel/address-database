@@ -3,7 +3,6 @@ public class NewPerson {
     String name, mail, number;
     final String[] data = {"name","mail","number"};
 
-
     //Konstruktor um eine neue Person hinzuzufügen
     public NewPerson(){
         try (final Scanner scan = new Scanner(System.in)) {
