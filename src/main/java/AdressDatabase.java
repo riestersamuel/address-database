@@ -15,7 +15,7 @@ public class AdressDatabase {
     }
 
     public static void convertNumberToMethod() throws IOException {
-        //Der Nutzer soll eine Zahl eingegeben. Diese wird ruft dann die entsprechende Methode auf.
+        //Der Nutzer soll eine Zahl eingegeben. Diese ruft dann die entsprechende Methode auf.
         System.out.println("Please enter a number: ");
         final Scanner scan = new Scanner(System.in);
         final int inputNumber = scan.nextInt();
@@ -23,6 +23,7 @@ public class AdressDatabase {
             case 0:
                 System.out.println("Starte Methode 0");
                 final Reader reader = new Reader();
+                // Die Klasse Reader wird aufgerufen, um die Einträge aus der Datei zu lesen.
                 break;
             case 1:
                 System.out.println("Starte Methode 1");
@@ -30,6 +31,7 @@ public class AdressDatabase {
             case 2:
                 System.out.println("Starte Methode 2");
                 final Writer person = new Writer();
+                // Die Klasse Writer wird aufgerufen, um die neuen Einträge in die Datei zu schreiben.
                 break;
             case 3:
                 System.out.println("Starte Methode 3");

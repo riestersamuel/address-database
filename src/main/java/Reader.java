@@ -3,7 +3,7 @@ import java.io.IOException;
 // Klasse um Text aus einer Datei zu lesen
 class Reader {
     public Reader() throws IOException {
-        // erstellt einen filereader
+        // erstellt einen Filereader
         FileReader input = new FileReader( "filewriter.txt");
 
         // erstellt einen neuen Array mit Anzahl der Zeichen, die ausgegeben werden sollen
