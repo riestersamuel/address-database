@@ -4,15 +4,15 @@ import java.nio.file.Paths;
 import java.util.List;
 import java.util.Scanner;
 public class Filter {
-    public static void main(String[] args) {
+    public Filter(){
+    //public static void main(String[] args) {
         String letter;
         try (final Scanner scan = new Scanner(System.in)) {
             System.out.println("Enter the letter you're searching for: ");
             letter = scan.next();
             try {
-                //Zuerst Zeile mit Anfangsbuchstabe suchen
                 String myFileName = ".\\filewriter.csv";
-                int line = -1;
+                int line;
 
                 //neue Liste mit allen Einträgen der Textdatei wird aufgerufen
                 List<String> allFileEntries = Files.readAllLines(Paths.get(myFileName));
