@@ -4,7 +4,7 @@ import java.io.IOException;
 class Reader {
     public Reader() throws IOException {
         // erstellt einen Filereader
-        FileReader input = new FileReader( "filewriter.csv");
+        FileReader input = new FileReader( "filewriter.txt");
 
         // erstellt einen neuen Array mit Anzahl der Zeichen, die ausgegeben werden sollen
         char[] text = new char[100];
