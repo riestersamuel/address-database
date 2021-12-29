@@ -1,18 +1,19 @@
+import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 // Klasse um Text aus einer Datei zu lesen
 class Reader {
     public Reader() throws IOException {
-        // erstellt einen Filereader
-        FileReader input = new FileReader( "filewriter.txt");
+        try {
 
-        // erstellt einen neuen Array mit Anzahl der Zeichen, die ausgegeben werden sollen
-        char[] text = new char[100];
-
-       while((input.read(text))>=0){
-           // Text aus der Datei wird ausgegeben
-           System.out.println(text);
-
+            BufferedReader newReader = new BufferedReader(new FileReader("address.txt"));
+            String line;
+            while ((line = newReader.readLine()) != null) {
+                System.out.println(line);
+            }
+            newReader.close();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
 
     }
