@@ -23,16 +23,20 @@ public class AdressDatabase {
         switch (inputNumber) {
             case 0:
                 System.out.println("Starte Methode 0");
-                final Reader reader = new Reader();
                 // Die Klasse Reader wird aufgerufen, um die Einträge aus der Datei zu lesen.
+                final Reader reader = new Reader();
                 // Mit dem folgenden Code startet sich die Anleitung und das Bedienfeld automatisch selbst neu ...
                 instructions();
                 convertNumberToMethod();
                 break;
             case 1:
                 System.out.println("Starte Methode 1");
+                FilterSwitch.filterInstructions();
+                FilterSwitch.convertNumberToFilter();
                 //final Filterfirstletter filteredentry = new Filterfirstletter();
                 //final Filterlastletter lastletter = new Filterlastletter();
+                instructions();
+                convertNumberToMethod();
                 break;
             case 2:
                 System.out.println("Starte Methode 2");
