@@ -32,28 +32,21 @@ public class AdressDatabase {
                 System.out.println("Starte Methode 1");
                 //final Filterfirstletter filteredentry = new Filterfirstletter();
                 //final Filterlastletter lastletter = new Filterlastletter();
-                //instructions();
-                //convertNumberToMethod();
                 break;
             case 2:
                 System.out.println("Starte Methode 2");
                 final Writer person = new Writer();
                 // Die Klasse Writer wird aufgerufen, um die neuen Einträge in die Datei zu schreiben.
-                instructions();
-                convertNumberToMethod();
                 break;
             case 3:
                 System.out.println("Starte Methode 3");
                 final DeletePerson deletePerson = new DeletePerson();
-                //instructions();
-                //convertNumberToMethod();
-                break;
-            case 4:
-                System.out.println("Starte Methode 4");
                 instructions();
                 convertNumberToMethod();
                 break;
-
+            case 4:
+                System.out.println("Shutting down...");
+                break;
             default:
                 System.out.println("Sorry, this number doesn't do anything.");
                 instructions();
