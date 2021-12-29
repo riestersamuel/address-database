@@ -2,6 +2,7 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class AdressDatabase {
+    static final Scanner scan = new Scanner(System.in);
 
     //Das ist die Anleitung zum Bedienen des Programms. Sie wird standardmäßig beim Starten des Programms angezeigt.
     public static void instructions() {
@@ -17,7 +18,7 @@ public class AdressDatabase {
     public static void convertNumberToMethod() throws IOException {
         //Der Nutzer soll eine Zahl eingegeben. Diese ruft dann die entsprechende Methode auf.
         System.out.println("Please enter a number: ");
-        final Scanner scan = new Scanner(System.in);
+
         final int inputNumber = scan.nextInt();
         switch (inputNumber) {
             case 0:
@@ -35,13 +36,16 @@ public class AdressDatabase {
                 break;
             case 2:
                 System.out.println("Starte Methode 2");
-                final Writer person = new Writer();
+                final Writer person = new Writer(scan);
                 // Die Klasse Writer wird aufgerufen, um die neuen Einträge in die Datei zu schreiben.
+                instructions();
+                convertNumberToMethod();
                 break;
             case 3:
                 System.out.println("Starte Methode 3");
-                final DeletePerson deletePerson = new DeletePerson();
+                final DeletePerson deletePerson = new DeletePerson(scan);
                 instructions();
+                convertNumberToMethod();
                 break;
             case 4:
                 System.out.println("Shutting down...");
@@ -51,16 +55,10 @@ public class AdressDatabase {
                 instructions();
                 convertNumberToMethod();
         }
-        /*Mit dem folgenden Code startet sich die Methode automatisch selbst neu,
-        wenn die eingegebene Zahl keiner Methode zugewiesen wurde*/
-        if (!(inputNumber > 0 && inputNumber < 5)) {
-            convertNumberToMethod();
-        }
     }
 
     public static void main(String[] args) throws IOException {
         instructions();
-        convertNumberToMethod();
         convertNumberToMethod();
     }
 }

@@ -3,21 +3,21 @@ public class NewPerson {
     String name, mail, number;
 
     //Konstruktor um eine neue Person hinzuzufügen
-    public NewPerson(){
-        try (final Scanner scan = new Scanner(System.in)) {
+    public NewPerson(Scanner scannerA){
+//        try (final Scanner scannerA = new Scanner(System.in)) {
             System.out.println("Enter your name: ");
-            this.name = scan.next();
+            this.name = scannerA.next();
             System.out.println(name);
             System.out.println("Enter your mail address: ");
-            this.mail = scan.next();
+            this.mail = scannerA.next();
             System.out.println("mail: "+mail);
             System.out.println("Enter your phone number: ");
-            this.number = scan.next();
+            this.number = scannerA.next();
             System.out.println("phone: "+number);
             /* Ansatz um die Daten zu speichern:
             String personInfo= name+", "+mail+", "+number;
-            FileIOwithSeparateMethods.write(personInfo);*/
-        }
+           FileIOwithSeparateMethods.write(personInfo);*/
+
         }
     }
 
