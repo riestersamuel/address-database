@@ -3,9 +3,9 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
 import java.util.Scanner;
-public class Filter {
-    public Filter(){
-    //public static void main(String[] args) {
+public class Filterfirstletter {
+    public Filterfirstletter(){
+        //für den Anfangsbuchstaben
         String letter;
         try (final Scanner scan = new Scanner(System.in)) {
             System.out.println("Enter the letter you're searching for: ");

@@ -30,8 +30,10 @@ public class AdressDatabase {
                 break;
             case 1:
                 System.out.println("Starte Methode 1");
-                instructions();
-                convertNumberToMethod();
+                //final Filterfirstletter filteredentry = new Filterfirstletter();
+                //final Filterlastletter lastletter = new Filterlastletter();
+                //instructions();
+                //convertNumberToMethod();
                 break;
             case 2:
                 System.out.println("Starte Methode 2");
