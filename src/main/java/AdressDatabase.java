@@ -43,8 +43,8 @@ public class AdressDatabase {
             case 3:
                 System.out.println("Starte Methode 3");
                 final DeletePerson deletePerson = new DeletePerson();
-                instructions();
-                convertNumberToMethod();
+                //instructions();
+                //convertNumberToMethod();
                 break;
             case 4:
                 System.out.println("Starte Methode 4");
