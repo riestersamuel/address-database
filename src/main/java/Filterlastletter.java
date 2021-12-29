@@ -13,7 +13,7 @@ public class Filterlastletter {
                 System.out.println("Enter the last letter you're searching for: ");
                 letter = scan.next();
                 try {
-                    String myFileName = ".\\filewriter.csv";
+                    String myFileName = ".\\address.txt";
                     int line;
 
                     //neue Liste mit allen Einträgen der Textdatei wird aufgerufen
