@@ -42,7 +42,6 @@ public class AdressDatabase {
                 System.out.println("Starte Methode 3");
                 final DeletePerson deletePerson = new DeletePerson();
                 instructions();
-                convertNumberToMethod();
                 break;
             case 4:
                 System.out.println("Shutting down...");
@@ -62,6 +61,6 @@ public class AdressDatabase {
     public static void main(String[] args) throws IOException {
         instructions();
         convertNumberToMethod();
-
+        convertNumberToMethod();
     }
 }
