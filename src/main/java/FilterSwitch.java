@@ -24,6 +24,7 @@ import java.util.Scanner;
                 case 0:
                     System.out.println("Starte Methode 0");
                     final Filterfirstletter filteredentry = new Filterfirstletter();
+                    filterInstructions();
                     convertNumberToMethodFilter();
                     break;
                 case 1:
@@ -34,11 +35,13 @@ import java.util.Scanner;
                 case 2:
                     System.out.println("Starte Methode 2");
                     final Filterlastletter lastletter = new Filterlastletter();
+                    filterInstructions();
                     convertNumberToMethodFilter();
                     break;
                 case 3:
                     System.out.println("Starte Methode 3");
                     final AdressDatabase a = new AdressDatabase();
+                    filterInstructions();
                     convertNumberToMethodFilter();
                     break;
 
