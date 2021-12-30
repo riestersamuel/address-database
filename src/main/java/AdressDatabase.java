@@ -32,7 +32,7 @@ public class AdressDatabase {
             case 1:
                 System.out.println("Starte Methode 1");
                 FilterSwitch.filterInstructions();
-                FilterSwitch.convertNumberToFilter();
+                FilterSwitch.convertNumberToFilter(scan);
                 //final Filterfirstletter filteredentry = new Filterfirstletter();
                 //final Filterlastletter lastletter = new Filterlastletter();
                 instructions();
