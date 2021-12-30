@@ -2,7 +2,6 @@ import java.io.IOException;
 import java.util.Scanner;
 //Klasse um einen Filter auszuwählen, um die Einträge zu filtern
 public class FilterSwitch {
-    static final Scanner scan = new Scanner(System.in);
     //Das ist die Anleitung zum Aussuchen der Filter.
     public static void filterInstructions() {
         System.out.println("Enter number ...");
@@ -13,7 +12,7 @@ public class FilterSwitch {
         System.out.println("");
     }
 
-    public static void convertNumberToFilter() throws IOException{
+    public static void convertNumberToFilter(Scanner scan) throws IOException{
         //Der Nutzer soll eine Zahl eingegeben. Diese ruft dann die Methode mit dem Filter auf.
         System.out.println("Please enter a number: ");
 
@@ -24,8 +23,6 @@ public class FilterSwitch {
                 System.out.println("Starte Methode 0");
                 final Filterfirstletter filteredentry = new Filterfirstletter();
                 filterInstructions();
-
-
                 break;
             case 1:
                 System.out.println("Starte Methode 1");
@@ -53,7 +50,7 @@ public class FilterSwitch {
 
         if ((inputNumber > 0 && inputNumber < 3) || (inputNumber > 4 && inputNumber < 9)) {
             filterInstructions();
-            convertNumberToFilter();
+            //convertNumberToFilter();
         }
     }
 }
