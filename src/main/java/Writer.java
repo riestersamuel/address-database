@@ -1,10 +1,11 @@
 import java.io.*;
+import java.util.Scanner;
 
 // Klasse um Text in einer Datei abzuspeichern
 public class Writer {
-    public Writer() {
+    public Writer(Scanner scan) {
         //Klasse NewPerson wird aufgerufen, um neue Einträge zu erstellen.
-        NewPerson person1 = new NewPerson();
+        NewPerson person1 = new NewPerson(scan);
         String name = person1.name;
         String mail = person1.mail;
         String number = person1.number;
@@ -22,5 +23,4 @@ public class Writer {
             e.printStackTrace();
         }
     }
-
 }
