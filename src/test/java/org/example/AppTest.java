@@ -14,4 +14,11 @@ public class AppTest {
     public void testApp() {
         Assert.assertEquals( 33, App.add(30, 3));
     }
+
+    //Ab hier kommen unsere eigenen Tests
+
+   @Test
+   public void testTemplateForTesting(){
+        Assert.assertEquals(8, templateForTesting.multiply());
+   }
 }

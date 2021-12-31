@@ -17,3 +17,6 @@ s, s, s
 Lea, lea@mail.de, +1234 
 lea, lea.fries, 1234 
 samuel, @mail, s 
+Lisa, Kohls, und 
+SAmuel, s, s 
+Samuel, @mail, 1234 
