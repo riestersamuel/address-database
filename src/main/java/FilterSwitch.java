@@ -19,7 +19,7 @@ public class FilterSwitch {
         final int inputNumber = scan.nextInt();
         switch (inputNumber) {
             case 0:
-                final FilterFirstLetter filteredentry = new FilterFirstLetter(scan);
+                final FilterFirstLetter filteredEntry = new FilterFirstLetter(scan);
                 filterInstructions();
                 convertNumberToFilter(scan);
                 break;

@@ -10,12 +10,12 @@ public class FilterInitialLetters {
         //für den Anfangsbuchstaben
         String letter;
 
-        System.out.println("Enter the letters you're searching for (please write the letters in uppercase, like for example: L-S)");
+        System.out.println("\nEnter the letters you're searching for (please write the letters in uppercase, like for example: L-S):");
         letter = scan.next();
         try {
             String myFileName = "address.txt";
             int line;
-
+            System.out.println("\nThese are your entries between the two letters you entered:");
             //neue Liste mit allen Einträgen der Textdatei wird aufgerufen
             List<String> allFileEntries = Files.readAllLines(Paths.get(myFileName));
 
@@ -32,7 +32,7 @@ public class FilterInitialLetters {
                 String myNextLine = allFileEntries.get(i);
                 if (!(myNextLine.matches("^[" + letter + "].*"))) {
                     line = i;//Zeile gefunden
-                    System.out.println("Sorry, this letter doesn't exist!");
+                    System.out.println("Sorry, no matching entries were found.");
                 }
             }
 
