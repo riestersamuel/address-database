@@ -18,7 +18,7 @@ public class DeletePerson {
 
         try {
             //Zuerst zu löschende Zeile suchen
-            String myFileName = ".\\address.txt";
+            String myFileName = "address.txt";
             //bis jetzt ist die Zeile noch unentdeckt daher leer
             int lineToBeDeleted = -1;
 
