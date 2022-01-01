@@ -10,8 +10,9 @@ public class FilterLastLetter {
             //für den Endbuchstaben
             String letter;
             try (final Scanner scan = new Scanner(System.in)) {
-                System.out.println("Enter the last letter you're searching for: ");
+                System.out.println("\nEnter the last letter you're searching for: ");
                 letter = scan.next();
+                System.out.println("\nThese are your entries ending with this letter: ");
                 try {
                     String myFileName = "address.txt";
                     int line;
