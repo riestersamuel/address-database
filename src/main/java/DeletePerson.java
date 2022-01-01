@@ -6,13 +6,13 @@ import java.util.Scanner;
 
 public class DeletePerson {
     //Konstruktor um einen bereits vorhandenen Eintrag zu löschen
-    String deletename;
+    String deleteName;
 
     public DeletePerson(Scanner scan) {
         //Name eingeben, wessen Einträge gelöscht werden sollen
         System.out.println("Enter the name whose data should be deleted: ");
-        this.deletename = scan.next();
-        System.out.println(deletename + " will be deleted!");
+        this.deleteName = scan.next();
+        System.out.println(deleteName + " was deleted!");
 
         try {
             //Zuerst zu löschende Zeile suchen
@@ -26,7 +26,7 @@ public class DeletePerson {
             //solange i kleiner ist als die Anzahl der Zeilen wird der Name gesucht
             for (int i = 0; i < allFileEntries.size(); i++) {
                 String myNextLine = allFileEntries.get(i);
-                if (myNextLine.contains(deletename)) {
+                if (myNextLine.contains(deleteName)) {
                     lineToBeDeleted = i;//Zeile gefunden
                     break;
                 }
@@ -45,7 +45,7 @@ public class DeletePerson {
                 myFileWriter.flush();
             }
         } catch (IOException ex) {
-            System.out.println("Error Data not found");
+            System.out.println("Error. Data not found.");
         }
 
     }

@@ -1,18 +1,17 @@
 import java.io.IOException;
 import java.util.Scanner;
 
-public class AdressDatabase {
+public class AddressDatabase {
     static final Scanner scan = new Scanner(System.in);
 
     //Das ist die Anleitung zum Bedienen des Programms. Sie wird standardmäßig beim Starten des Programms angezeigt.
     public static void instructions() {
-        System.out.println("Enter number ...");
+        System.out.println("\nEnter number ...");
         System.out.println("0 to browse person entries.");
         System.out.println("1 to toggle filtering person entries.");
         System.out.println("2 to create a new person entry.");
         System.out.println("3 to delete a person entry.");
-        System.out.println("4 to exit this program.");
-        System.out.println("");
+        System.out.println("4 to exit this program.\n");
     }
 
     public static void convertNumberToMethod() throws IOException {
@@ -33,8 +32,8 @@ public class AdressDatabase {
                 System.out.println("Starte Methode 1");
                 FilterSwitch.filterInstructions();
                 FilterSwitch.convertNumberToFilter(scan);
-                //final Filterfirstletter filteredentry = new Filterfirstletter();
-                //final Filterlastletter lastletter = new Filterlastletter();
+                /*final Filterfirstletter filteredentry = new Filterfirstletter();
+                final Filterlastletter lastletter = new Filterlastletter();*/
                 instructions();
                 convertNumberToMethod();
                 break;

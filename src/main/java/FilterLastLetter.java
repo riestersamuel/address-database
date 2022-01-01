@@ -4,9 +4,9 @@ import java.nio.file.Paths;
 import java.util.List;
 import java.util.Scanner;
 
-public class Filterlastletter {
+public class FilterLastLetter {
 
-        public Filterlastletter (){
+        public FilterLastLetter(){
             //für den Endbuchstaben
             String letter;
             try (final Scanner scan = new Scanner(System.in)) {
@@ -32,7 +32,7 @@ public class Filterlastletter {
                 }
                 catch(IOException ex)
                 {
-                    System.out.println("Error Data not found");
+                    System.out.println("Error. Data not found.");
                 }
             }
         }
