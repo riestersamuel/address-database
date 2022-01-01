@@ -50,7 +50,7 @@ public class FilterSwitch {
 
         if ((inputNumber > 0 && inputNumber < 3) || (inputNumber > 4 && inputNumber < 9)) {
             filterInstructions();
-            //convertNumberToFilter();
+            convertNumberToFilter(scan);
         }
     }
 }
