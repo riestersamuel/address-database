@@ -2,6 +2,7 @@ import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
+import java.util.Locale;
 import java.util.Scanner;
 
 public class FilterFirstLetter {
@@ -21,7 +22,7 @@ public class FilterFirstLetter {
             //solange i kleiner ist als die Anzahl der Zeilen wird der Name gesucht
             for (int i = 0; i < allFileEntries.size(); i++) {
                 String myNextLine = allFileEntries.get(i);
-                if (myNextLine.startsWith(letter)) {
+                if (myNextLine.startsWith(letter.toUpperCase())) {
                     line = i;//Zeile gefunden
                     System.out.println(allFileEntries.get(line));
                 }
@@ -29,7 +30,7 @@ public class FilterFirstLetter {
             // wenn Buchstabe der gesucht wurde nicht existiert
             for (int i = 0; i < 1; i++) {
                 String myNextLine = allFileEntries.get(i);
-                if (!(myNextLine.startsWith(letter))) {
+                if (!(myNextLine.startsWith(letter.toUpperCase()))) {
                     System.out.println("Sorry, no matching entries were found!");
                 }
             }
