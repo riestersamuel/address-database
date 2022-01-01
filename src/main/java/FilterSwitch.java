@@ -1,8 +1,8 @@
 import java.io.IOException;
 import java.util.Scanner;
-//Klasse um einen Filter auszuwählen, um die Einträge zu filtern
+//Klasse um einen Filter auszuwählen, um die Einträge zu filtern.
 public class FilterSwitch {
-    //Das ist die Anleitung zum Aussuchen der Filter.
+    //Das ist die Anleitung zum aussuchen der Filter.
     public static void filterInstructions() {
         System.out.println("Enter number ...");
         System.out.println("0 to filter by the first letter");

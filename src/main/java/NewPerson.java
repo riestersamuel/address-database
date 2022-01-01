@@ -4,7 +4,6 @@ public class NewPerson {
 
     //Konstruktor um eine neue Person hinzuzufügen
     public NewPerson(Scanner scannerA){
-//        try (final Scanner scannerA = new Scanner(System.in)) {
             System.out.println("Enter your name: ");
             this.name = scannerA.next();
             System.out.println(name);
@@ -14,9 +13,6 @@ public class NewPerson {
             System.out.println("Enter your phone number: ");
             this.number = scannerA.next();
             System.out.println("phone: "+number);
-            /* Ansatz um die Daten zu speichern:
-            String personInfo= name+", "+mail+", "+number;
-           FileIOwithSeparateMethods.write(personInfo);*/
 
         }
     }

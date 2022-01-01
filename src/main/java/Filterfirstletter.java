@@ -36,6 +36,7 @@ public class Filterfirstletter {
 
 
         } catch (IOException ex) {
+            System.out.println("Error Data not found");
         }
 
     }
