@@ -19,13 +19,11 @@ public class FilterSwitch {
         final int inputNumber = scan.nextInt();
         switch (inputNumber) {
             case 0:
-                System.out.println("Starte Methode 0");
                 final FilterFirstLetter filteredentry = new FilterFirstLetter(scan);
                 filterInstructions();
                 convertNumberToFilter(scan);
                 break;
             case 1:
-                System.out.println("Starte Methode 1");
                 final FilterInitialLetters l = new FilterInitialLetters(scan);
                 filterInstructions();
                 convertNumberToFilter(scan);
