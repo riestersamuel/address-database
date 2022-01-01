@@ -30,7 +30,7 @@ public class FilterFirstLetter {
                 String myNextLine = allFileEntries.get(i);
                 if (!(myNextLine.startsWith(letter))) {
                     line = i;//Zeile gefunden
-                    System.out.println("Sorry, this letter doesn't exist!");
+                    System.out.println("Sorry, no matching entries were found!");
                 }
             }
 

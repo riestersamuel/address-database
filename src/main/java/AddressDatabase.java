@@ -44,16 +44,16 @@ public class AddressDatabase {
                 convertNumberToMethod();
                 break;
             case 3:
-                System.out.println("Starte Methode 3");
+                System.out.println("\nYou want to delete an entry.");
                 final DeletePerson deletePerson = new DeletePerson(scan);
                 instructions();
                 convertNumberToMethod();
                 break;
             case 4:
-                System.out.println("Shutting down...");
+                System.out.println("\nShutting down...");
                 break;
             default:
-                System.out.println("Sorry, this number doesn't do anything.");
+                System.out.println("\nSorry, this number doesn't do anything.");
                 instructions();
                 convertNumberToMethod();
         }
