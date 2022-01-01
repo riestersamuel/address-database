@@ -5,10 +5,10 @@ import java.util.Scanner;
 public class Writer {
     public Writer(Scanner scan) {
         //Klasse NewPerson wird aufgerufen, um neue Einträge zu erstellen.
-        NewPerson person1 = new NewPerson(scan);
-        String name = person1.name;
-        String mail = person1.mail;
-        String number = person1.number;
+        NewPerson person = new NewPerson(scan);
+        String name = person.name;
+        String mail = person.mail;
+        String number = person.number;
 
         try {
             // neuer Filewriter wird erstellt
