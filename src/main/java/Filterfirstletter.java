@@ -10,6 +10,7 @@ public class Filterfirstletter {
         String letter;
         System.out.println("Enter the letter you're searching for: ");
         letter = scan.next();
+
         try {
             String myFileName = "address.txt";
             int line;
@@ -29,8 +30,8 @@ public class Filterfirstletter {
             for (int i = 0; i < 1; i++) {
                 String myNextLine = allFileEntries.get(i);
                 if (!(myNextLine.startsWith(letter))) {
-                    line = i;//Zeile gefunden
                     System.out.println("Sorry, this letter doesnt exist!");
+                    break;
                 }
             }
 
