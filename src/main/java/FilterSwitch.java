@@ -1,4 +1,5 @@
 import java.io.IOException;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 //Klasse um einen Filter auszuwählen, um die Einträge zu filtern.
@@ -18,6 +19,7 @@ public class FilterSwitch {
 
 
         final int inputNumber = scan.nextInt();
+        try{
         switch (inputNumber) {
             case 0:
                 final FilterFirstLetter filteredEntry = new FilterFirstLetter(scan);
@@ -45,6 +47,10 @@ public class FilterSwitch {
                 System.out.println("Sorry, this number doesn't do anything.");
                 filterInstructions();
                 convertNumberToFilter(scan);
+        }
+        }
+        catch(InputMismatchException e){
+            System.out.println("Invalid Input!");
         }
     }
 }

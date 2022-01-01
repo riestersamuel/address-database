@@ -1,4 +1,5 @@
 import java.io.IOException;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class AddressDatabase {
@@ -19,6 +20,7 @@ public class AddressDatabase {
         System.out.println("Please enter a number: ");
 
         final int inputNumber = scan.nextInt();
+        try{
         switch (inputNumber) {
             case 0:
                 System.out.println("\nCurrent person entries:");
@@ -57,6 +59,10 @@ public class AddressDatabase {
                 System.out.println("\nSorry, this number doesn't do anything.");
                 instructions();
                 convertNumberToMethod();
+        }
+        }
+        catch(InputMismatchException e){
+            System.out.println("Invalid Input!");
         }
     }
 
