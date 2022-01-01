@@ -1,5 +1,6 @@
 import java.io.IOException;
 import java.util.Scanner;
+
 //Klasse um einen Filter auszuwählen, um die Einträge zu filtern.
 public class FilterSwitch {
     //Das ist die Anleitung zum aussuchen der Filter.
@@ -37,7 +38,6 @@ public class FilterSwitch {
             case 3:
                 System.out.println("Starte Methode 3");
                 final AddressDatabase a = new AddressDatabase();
-
                 break;
 
 
