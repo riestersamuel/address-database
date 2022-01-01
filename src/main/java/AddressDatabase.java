@@ -25,6 +25,7 @@ public class AddressDatabase {
                 // Die Klasse Reader wird aufgerufen, um die Einträge aus der Datei zu lesen.
                 final Reader reader = new Reader();
                 // Mit dem folgenden Code startet sich die Anleitung und das Bedienfeld automatisch selbst neu ...
+                // Dies ist natürlich auch bei den anderen Cases der Fall.
                 instructions();
                 convertNumberToMethod();
                 break;
