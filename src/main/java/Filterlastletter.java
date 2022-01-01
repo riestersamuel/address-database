@@ -13,7 +13,7 @@ public class Filterlastletter {
                 System.out.println("Enter the last letter you're searching for: ");
                 letter = scan.next();
                 try {
-                    String myFileName = ".\\address.txt";
+                    String myFileName = "address.txt";
                     int line;
 
                     //neue Liste mit allen Einträgen der Textdatei wird aufgerufen
@@ -31,7 +31,9 @@ public class Filterlastletter {
 
                 }
                 catch(IOException ex)
-                { }
+                {
+                    System.out.println("Error Data not found");
+                }
             }
         }
     }

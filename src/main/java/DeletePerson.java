@@ -1,5 +1,3 @@
-import org.w3c.dom.DOMStringList;
-
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -47,6 +45,7 @@ public class DeletePerson {
                 myFileWriter.flush();
             }
         } catch (IOException ex) {
+            System.out.println("Error Data not found");
         }
 
     }
