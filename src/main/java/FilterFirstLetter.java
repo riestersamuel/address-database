@@ -10,7 +10,7 @@ public class FilterFirstLetter {
         String letter;
         System.out.println("\nEnter the letter you're searching for (please capitalize it): ");
         letter = scan.next();
-        System.out.println("\nThese are your entries starting with this letter: 0");
+        System.out.println("\nThese are your entries starting with this letter: ");
         try {
             String myFileName = "address.txt";
             int line;
