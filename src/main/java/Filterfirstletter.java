@@ -11,7 +11,7 @@ public class Filterfirstletter {
         System.out.println("Enter the letter you're searching for: ");
         letter = scan.next();
         try {
-            String myFileName = ".\\address.txt";
+            String myFileName = "address.txt";
             int line;
 
             //neue Liste mit allen Einträgen der Textdatei wird aufgerufen
