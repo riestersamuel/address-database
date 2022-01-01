@@ -27,8 +27,7 @@ public class FilterSwitch {
                 break;
             case 1:
                 System.out.println("Starte Methode 1");
-                final Reader r = new Reader();
-                //final FilterInitialLetters l = new FilterInitialLetters(scan);
+                final FilterInitialLetters l = new FilterInitialLetters(scan);
                 filterInstructions();
                 convertNumberToFilter(scan);
                 break;
