@@ -10,7 +10,7 @@ public class DeletePerson {
 
     public DeletePerson(Scanner scan) {
         //Name eingeben, wessen Einträge gelöscht werden sollen
-        System.out.println("Enter the name whose data should be deleted: ");
+        System.out.println("Enter the name of the person you want to delete: ");
         this.deleteName = scan.next();
         System.out.println(deleteName + " was deleted!");
 

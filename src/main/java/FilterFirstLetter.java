@@ -8,8 +8,9 @@ public class FilterFirstLetter {
     public FilterFirstLetter(Scanner scan) {
         //für den Anfangsbuchstaben
         String letter;
-        System.out.println("Enter the letter you're searching for: ");
+        System.out.println("\nEnter the letter you're searching for: ");
         letter = scan.next();
+        System.out.println("\nThese are your entries starting with " + letter +":");
         try {
             String myFileName = "address.txt";
             int line;
@@ -30,7 +31,7 @@ public class FilterFirstLetter {
                 String myNextLine = allFileEntries.get(i);
                 if (!(myNextLine.startsWith(letter))) {
                     line = i;//Zeile gefunden
-                    System.out.println("Sorry, this letter doesn't exist!");
+                    System.out.println("Sorry, no matching entries were found!");
                 }
             }
 

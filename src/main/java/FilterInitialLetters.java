@@ -10,7 +10,7 @@ public class FilterInitialLetters {
         //für den Anfangsbuchstaben
         String letter;
 
-        System.out.println("Enter the letters you're searching for (for example: L-S)");
+        System.out.println("Enter the letters you're searching for (please write the letters in uppercase, like for example: L-S)");
         letter = scan.next();
         try {
             String myFileName = "address.txt";

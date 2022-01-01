@@ -21,7 +21,7 @@ public class AddressDatabase {
         final int inputNumber = scan.nextInt();
         switch (inputNumber) {
             case 0:
-                System.out.println("Starte Methode 0");
+                System.out.println("\nCurrent person entries:");
                 // Die Klasse Reader wird aufgerufen, um die Einträge aus der Datei zu lesen.
                 final Reader reader = new Reader();
                 // Mit dem folgenden Code startet sich die Anleitung und das Bedienfeld automatisch selbst neu ...
@@ -29,7 +29,6 @@ public class AddressDatabase {
                 convertNumberToMethod();
                 break;
             case 1:
-                System.out.println("Starte Methode 1");
                 FilterSwitch.filterInstructions();
                 FilterSwitch.convertNumberToFilter(scan);
                 /*final Filterfirstletter filteredentry = new Filterfirstletter();
@@ -38,23 +37,23 @@ public class AddressDatabase {
                 convertNumberToMethod();
                 break;
             case 2:
-                System.out.println("Starte Methode 2");
+                System.out.println("\nYou want to add a new person.");
                 final Writer person = new Writer(scan);
                 // Die Klasse Writer wird aufgerufen, um die neuen Einträge in die Datei zu schreiben.
                 instructions();
                 convertNumberToMethod();
                 break;
             case 3:
-                System.out.println("Starte Methode 3");
+                System.out.println("\nYou want to delete an entry.");
                 final DeletePerson deletePerson = new DeletePerson(scan);
                 instructions();
                 convertNumberToMethod();
                 break;
             case 4:
-                System.out.println("Shutting down...");
+                System.out.println("\nShutting down...");
                 break;
             default:
-                System.out.println("Sorry, this number doesn't do anything.");
+                System.out.println("\nSorry, this number doesn't do anything.");
                 instructions();
                 convertNumberToMethod();
         }
