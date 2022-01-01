@@ -21,7 +21,7 @@ public class FilterSwitch {
         switch (inputNumber) {
             case 0:
                 System.out.println("Starte Methode 0");
-                final Filterfirstletter filteredentry = new Filterfirstletter();
+                final Filterfirstletter filteredentry = new Filterfirstletter(scan);
                 filterInstructions();
                 break;
             case 1:
