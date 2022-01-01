@@ -1,1 +1,3 @@
 Samuel, mail: seineMail, number: 1234 
+Lisa, mail: Kohls, number: 343 
+Lisa, mail: ksks, number: 889 

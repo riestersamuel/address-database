@@ -31,7 +31,6 @@ public class FilterInitialLetters {
             for (int i = 0; i < 1; i++) {
                 String myNextLine = allFileEntries.get(i);
                 if (!(myNextLine.matches("^[" + letter + "].*"))) {
-                    line = i;//Zeile gefunden
                     System.out.println("Sorry, this letter doesn't exist!");
                 }
             }
