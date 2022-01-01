@@ -25,9 +25,18 @@ public class Filterfirstletter {
                     System.out.println(allFileEntries.get(line));
                 }
             }
+            for (int i = 0; i < 1; i++) {
+                String myNextLine = allFileEntries.get(i);
+                if (!(myNextLine.startsWith(letter))) {
+                    line = i;//Zeile gefunden
+                    System.out.println("Sorry, this letter doesnt exist!");
+                }
+            }
+
 
         } catch (IOException ex) {
             System.out.println("Error Data not found");
         }
+
     }
 }

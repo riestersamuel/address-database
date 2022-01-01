@@ -12,7 +12,7 @@ public class FilterSwitch {
         System.out.println("");
     }
 
-    public static void convertNumberToFilter(Scanner scan) throws IOException{
+    public static void convertNumberToFilter(Scanner scan) throws IOException {
         //Der Nutzer soll eine Zahl eingegeben. Diese ruft dann die Methode mit dem Filter auf.
         System.out.println("Please enter a number: ");
 
@@ -23,18 +23,20 @@ public class FilterSwitch {
                 System.out.println("Starte Methode 0");
                 final Filterfirstletter filteredentry = new Filterfirstletter(scan);
                 filterInstructions();
+                convertNumberToFilter(scan);
                 break;
             case 1:
                 System.out.println("Starte Methode 1");
                 final Reader r = new Reader();
                 //final FilterInitialLetters l = new FilterInitialLetters(scan);
-
+                filterInstructions();
+                convertNumberToFilter(scan);
                 break;
             case 2:
                 System.out.println("Starte Methode 2");
                 final Filterlastletter lastletter = new Filterlastletter();
                 filterInstructions();
-
+                convertNumberToFilter(scan);
                 break;
             case 3:
                 System.out.println("Starte Methode 3");
@@ -45,12 +47,8 @@ public class FilterSwitch {
 
             default:
                 System.out.println("Sorry, this number doesn't do anything.");
-        }
-
-
-        if ((inputNumber > 0 && inputNumber < 3) || (inputNumber > 4 && inputNumber < 9)) {
-            filterInstructions();
-            convertNumberToFilter(scan);
+                filterInstructions();
+                convertNumberToFilter(scan);
         }
     }
 }
