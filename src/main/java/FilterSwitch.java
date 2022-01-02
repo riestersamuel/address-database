@@ -9,7 +9,7 @@ public class FilterSwitch {
         System.out.println("\nPlease select your filter. Enter number ...");
         System.out.println("0 to filter by the first letter.");
         System.out.println("1 to filter by several initial letters.");
-        System.out.println("2 to filter by the end of the string.");
+        System.out.println("2 to filter by the last letter of a name.");
         System.out.println("3 to return to main page.\n");
     }
 
@@ -32,13 +32,11 @@ public class FilterSwitch {
                 convertNumberToFilter(scan);
                 break;
             case 2:
-                System.out.println("Starte Methode 2");
                 final FilterLastLetter lastletter = new FilterLastLetter();
                 filterInstructions();
                 convertNumberToFilter(scan);
                 break;
             case 3:
-                System.out.println("Starte Methode 3");
                 final AddressDatabase a = new AddressDatabase();
                 break;
 

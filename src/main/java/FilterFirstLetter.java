@@ -9,7 +9,7 @@ public class FilterFirstLetter {
     public FilterFirstLetter(Scanner scan) {
         //für den Anfangsbuchstaben
         String letter;
-        System.out.println("\nEnter the letter you're searching for (please capitalize it): ");
+        System.out.println("\nEnter the letter you're searching for: ");
         letter = scan.next();
         System.out.println("\nThese are your entries starting with this letter: ");
         try {

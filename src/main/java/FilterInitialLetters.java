@@ -10,7 +10,7 @@ public class FilterInitialLetters {
         //für den Anfangsbuchstaben
         String letter;
 
-        System.out.println("\nEnter the letters you're searching for (please write the letters in uppercase, like for example: L-S):");
+        System.out.println("\nEnter the letters you're searching for (in the following format L-S): ");
         letter = scan.next();
         System.out.println("\nThese macthing entries were found:");
         try {
