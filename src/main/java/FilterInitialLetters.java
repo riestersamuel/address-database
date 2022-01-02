@@ -22,7 +22,7 @@ public class FilterInitialLetters {
 
             //solange i kleiner ist als die Anzahl der Zeilen wird der Name gesucht
             for (int i = 0; i < allFileEntries.size(); i++) {
-                String myNextLine = allFileEntries.get(i);
+                String myNextLine = allFileEntries.get(i).toUpperCase();
                 if (myNextLine.matches("^[" + letter.toUpperCase() + "].*")) {
                     line = i;//Zeile gefunden
                     System.out.println(allFileEntries.get(line));

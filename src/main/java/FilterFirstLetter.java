@@ -19,16 +19,18 @@ public class FilterFirstLetter {
             //neue Liste mit allen Einträgen der Textdatei wird aufgerufen
             List<String> allFileEntries = Files.readAllLines(Paths.get(myFileName));
 
-            //solange i kleiner ist als die Anzahl der Zeilen wird der Name gesucht
-            for (int i = 0; i < allFileEntries.size(); i++) {
-                String myNextLine = allFileEntries.get(i);
-                if (myNextLine.startsWith(letter.toUpperCase())) {
-                    line = i;//Zeile gefunden
-                    System.out.println(allFileEntries.get(line));
+                //solange i kleiner ist als die Anzahl der Zeilen wird der Name gesucht
+                for (int i = 0; i < allFileEntries.size(); i++) {
+                    String myNextLine = allFileEntries.get(i).toUpperCase();
+                    if (myNextLine.startsWith(letter.toUpperCase())) {
+                        line = i;//Zeile gefunden
+                        System.out.println(allFileEntries.get(line));
+                    }
+
                 }
-            }
+
             // wenn Buchstabe der gesucht wurde nicht existiert
-            for (int i = 0; i < allFileEntries.size()-1; i++) {
+            for (int i = 0; i < allFileEntries.size(); i++) {
                 String myNextLine = allFileEntries.get(i);
                 if (!(myNextLine.startsWith(letter.toUpperCase()))) {
                     System.out.println("Sorry, no matching entries were found!");
