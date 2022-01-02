@@ -12,7 +12,7 @@ public class FilterInitialLetters {
 
         System.out.println("\nEnter the letters you're searching for (in the following format L-S): ");
         letter = scan.next();
-        System.out.println("\nThese macthing entries were found:");
+        System.out.println("\nThese matching entries were found:");
         try {
             String myFileName = "address.txt";
             int line;

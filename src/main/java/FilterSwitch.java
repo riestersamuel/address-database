@@ -32,11 +32,13 @@ public class FilterSwitch {
                 convertNumberToFilter(scan);
                 break;
             case 2:
+                System.out.println("Starte Methode 2");
                 final FilterLastLetter lastletter = new FilterLastLetter();
                 filterInstructions();
                 convertNumberToFilter(scan);
                 break;
             case 3:
+                System.out.println("Starte Methode 3");
                 final AddressDatabase a = new AddressDatabase();
                 break;
 
@@ -48,8 +50,7 @@ public class FilterSwitch {
         }
         }
         catch(InputMismatchException e){
-            System.out.println("Invalid input, please something else.");
-            convertNumberToFilter(scan);
+            System.out.println("Invalid Input!");
         }
     }
 }
