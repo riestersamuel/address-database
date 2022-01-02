@@ -18,8 +18,8 @@ public class AddressDatabase {
     public static void convertNumberToMethod() throws IOException {
         //Der Nutzer soll eine Zahl eingegeben. Diese ruft dann die entsprechende Methode auf.
         System.out.println("Please enter a number: ");
+        final int inputNumber = scan.nextInt();
         try {
-            final int inputNumber = scan.nextInt();
             switch (inputNumber) {
                 case 0:
                     System.out.println("\nCurrent person entries:");
