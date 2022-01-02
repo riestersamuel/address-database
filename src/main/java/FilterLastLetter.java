@@ -6,10 +6,10 @@ import java.util.Scanner;
 
 public class FilterLastLetter {
 
-    public FilterLastLetter() {
+    public FilterLastLetter(Scanner scan) {
         //für den Endbuchstaben
         String letter;
-        try (final Scanner scan = new Scanner(System.in)) {
+
             System.out.println("\nEnter the last letter you're searching for: ");
             letter = scan.next();
             System.out.println("\nThese are your entries ending with this letter: ");
@@ -23,22 +23,23 @@ public class FilterLastLetter {
                 //solange i kleiner ist als die Anzahl der Zeilen wird der Name gesucht
                 for (int i = 0; i < allFileEntries.size(); i++) {
                     String myNextLine = allFileEntries.get(i);
-                    if (myNextLine.endsWith(letter)) {
+                    String[] newLine = myNextLine.split(",");
+                    if (newLine[0].endsWith(letter)) {
                         line = i;//Zeile gefunden
                         System.out.println(allFileEntries.get(line));
                     }
                 }
-                for (int i = 0; i < 1; i++) {
+                /*for (int i = 0; i < 1; i++) {
                     String myNextLine = allFileEntries.get(i);
                     if (!(myNextLine.endsWith(letter))) {
                         System.out.println("Sorry, no matching entries were found!");
                     }
-                }
+                }*/
 
             } catch (IOException ex) {
                 System.out.println("Error. Data not found.");
             }
         }
     }
-}
+
 
