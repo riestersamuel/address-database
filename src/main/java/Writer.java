@@ -21,6 +21,7 @@ public class Writer {
             myWriter.close();
 
         } catch (IOException e) {
+            System.out.println("Error. Data not found.");
             e.printStackTrace();
         }
     }

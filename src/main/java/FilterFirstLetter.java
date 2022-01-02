@@ -36,7 +36,7 @@ public class FilterFirstLetter {
                 }
             }
 
-
+        //Fehlermeldung,wenn Datei nicht gefunden wird
         } catch (IOException ex) {
             System.out.println("Error. Data not found.");
         }

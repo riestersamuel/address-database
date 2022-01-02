@@ -64,10 +64,6 @@ public class AddressDatabase {
             convertNumberToMethod();
         }
     }
-
-
-
-
     public static void main(String[] args) throws IOException {
         instructions();
         convertNumberToMethod();
