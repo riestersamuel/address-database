@@ -17,9 +17,8 @@ public class FilterSwitch {
         //Der Nutzer soll eine Zahl eingegeben. Diese ruft dann die Methode mit dem Filter auf.
         System.out.println("Please enter a number: ");
 
-
-        final int inputNumber = scan.nextInt();
         try{
+            final int inputNumber = scan.nextInt();
         switch (inputNumber) {
             case 0:
                 final FilterFirstLetter filteredEntry = new FilterFirstLetter(scan);
@@ -50,7 +49,10 @@ public class FilterSwitch {
         }
         }
         catch(InputMismatchException e){
-            System.out.println("Invalid Input!");
+            System.out.println("Invalid input, please try something else.");
+            scan.nextLine();
+            filterInstructions();
+            convertNumberToFilter(scan);
         }
     }
 }
