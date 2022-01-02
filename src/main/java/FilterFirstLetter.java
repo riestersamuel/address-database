@@ -28,10 +28,11 @@ public class FilterFirstLetter {
                 }
             }
             // wenn Buchstabe der gesucht wurde nicht existiert
-            for (int i = 0; i < 1; i++) {
+            for (int i = 0; i < allFileEntries.size()-1; i++) {
                 String myNextLine = allFileEntries.get(i);
                 if (!(myNextLine.startsWith(letter.toUpperCase()))) {
                     System.out.println("Sorry, no matching entries were found!");
+                    break;
                 }
             }
 

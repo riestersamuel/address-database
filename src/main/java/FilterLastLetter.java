@@ -21,11 +21,19 @@ public class FilterLastLetter {
                 List<String> allFileEntries = Files.readAllLines(Paths.get(myFileName));
 
                 //solange i kleiner ist als die Anzahl der Zeilen wird der Name gesucht
+
                 for (int i = 0; i < allFileEntries.size(); i++) {
                     String myNextLine = allFileEntries.get(i);
                     if (myNextLine.endsWith(letter)) {
                         line = i;//Zeile gefunden
                         System.out.println(allFileEntries.get(line));
+                    }
+                }
+                for (int i = 0; i < 1; i++) {
+                    String myNextLine = allFileEntries.get(i);
+                    if (!(myNextLine.endsWith(letter))) {
+                        line = i;//Zeile gefunden
+                        System.out.println("Sorry, no matching entries were found!");
                     }
                 }
 
