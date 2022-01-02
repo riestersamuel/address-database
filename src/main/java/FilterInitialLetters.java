@@ -38,6 +38,7 @@ public class FilterInitialLetters {
 
 
         } catch (IOException ex) {
+            System.out.println("Error. Data not found.");
         }
 
     }

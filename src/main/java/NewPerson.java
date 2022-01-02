@@ -5,11 +5,11 @@ public class NewPerson {
 
     //Konstruktor um eine neue Person hinzuzufügen
     public NewPerson(Scanner scan) {
-        System.out.println("Enter your first name (please capitalize the first letter): ");
+        System.out.println("Enter your first name: ");
         this.firstName = scan.next();
-        System.out.println("Enter your second name (please capitalize the first letter): ");
+        System.out.println("Enter your second name: ");
         this.secondName = scan.next();
-        System.out.println("Enter your mail address (please write everything in small letters): ");
+        System.out.println("Enter your mail address: ");
         this.mail = scan.next();
         System.out.println("Enter your phone number: ");
         this.number = scan.next();

@@ -33,8 +33,6 @@ public class AddressDatabase {
                 case 1:
                     FilterSwitch.filterInstructions();
                     FilterSwitch.convertNumberToFilter(scan);
-                /*final Filterfirstletter filteredentry = new Filterfirstletter();
-                final Filterlastletter lastletter = new Filterlastletter();*/
                     instructions();
                     convertNumberToMethod();
                     break;
