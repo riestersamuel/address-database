@@ -1,5 +1,4 @@
 package org.example;
-
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -17,8 +16,4 @@ public class AppTest {
 
     //Ab hier kommen unsere eigenen Tests
 
-   @Test
-   public void testTemplateForTesting(){
-        //Assert.assertEquals(8, templateForTesting.multiply());
    }
-}

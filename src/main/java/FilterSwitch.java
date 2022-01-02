@@ -50,7 +50,8 @@ public class FilterSwitch {
         }
         }
         catch(InputMismatchException e){
-            System.out.println("Invalid Input!");
+            System.out.println("Invalid input, please something else.");
+            convertNumberToFilter(scan);
         }
     }
 }
