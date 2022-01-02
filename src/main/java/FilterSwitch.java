@@ -32,7 +32,7 @@ public class FilterSwitch {
                 break;
             case 2:
                 System.out.println("Starte Methode 2");
-                final FilterLastLetter lastletter = new FilterLastLetter();
+                final FilterLastLetter lastletter = new FilterLastLetter(scan);
                 filterInstructions();
                 convertNumberToFilter(scan);
                 break;

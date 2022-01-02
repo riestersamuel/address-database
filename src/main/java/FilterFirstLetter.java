@@ -22,7 +22,8 @@ public class FilterFirstLetter {
                 //solange i kleiner ist als die Anzahl der Zeilen wird der Name gesucht
                 for (int i = 0; i < allFileEntries.size(); i++) {
                     String myNextLine = allFileEntries.get(i).toUpperCase();
-                    if (myNextLine.startsWith(letter.toUpperCase())) {
+                    String[] newWord = myNextLine.split(" ");
+                    if (newWord[1].startsWith(letter.toUpperCase())) {
                         line = i;//Zeile gefunden
                         System.out.println(allFileEntries.get(line));
                     }
