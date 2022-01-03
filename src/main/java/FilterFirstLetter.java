@@ -9,9 +9,9 @@ public class FilterFirstLetter {
     public FilterFirstLetter(Scanner scan) {
         //für den Anfangsbuchstaben
         String letter;
-        System.out.println("\nEnter the letter you're searching for: ");
+        System.out.println("\nEnter the first letter of the person's last name you're searching for: ");
         letter = scan.next();
-        System.out.println("\nThese are your entries starting with this letter: ");
+        System.out.println("\nThese matching entries were found: ");
         try {
             String myFileName = "address.txt";
             int line;

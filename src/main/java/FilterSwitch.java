@@ -7,9 +7,9 @@ public class FilterSwitch {
     //Das ist die Anleitung zum Aussuchen der Filter.
     public static void filterInstructions() {
         System.out.println("\nPlease select your filter. Enter number ...");
-        System.out.println("0 to filter by the first letter.");
-        System.out.println("1 to filter by several initial letters.");
-        System.out.println("2 to filter by the last letter of a name.");
+        System.out.println("0 to filter by the first letter of a person's last name.");
+        System.out.println("1 to filter by several initial letters (also concerning the last name).");
+        System.out.println("2 to filter by ...");
         System.out.println("3 to return to main page.\n");
     }
 
