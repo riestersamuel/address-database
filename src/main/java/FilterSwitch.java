@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 //Klasse um einen Filter auszuwählen, um die Einträge zu filtern.
 public class FilterSwitch {
-    //Das ist die Anleitung zum aussuchen der Filter.
+    //Das ist die Anleitung zum Aussuchen der Filter.
     public static void filterInstructions() {
         System.out.println("\nPlease select your filter. Enter number ...");
         System.out.println("0 to filter by the first letter.");
@@ -48,10 +48,11 @@ public class FilterSwitch {
                 convertNumberToFilter(scan);
         }
         }
+        // Exception für ungültige Benutzereingabe
         catch(InputMismatchException e){
             System.out.println("Invalid input, please try something else.");
-            scan.nextLine();
-            filterInstructions();
+            scan.nextLine(); // Scanner-Puffer leeren
+            filterInstructions(); // Filter Switch wird neu gestartet
             convertNumberToFilter(scan);
         }
     }

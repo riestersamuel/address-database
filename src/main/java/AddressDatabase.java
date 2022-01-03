@@ -38,18 +38,20 @@ public class AddressDatabase {
                     break;
                 case 2:
                     System.out.println("\nYou want to add a new person.");
-                    final Writer person = new Writer(scan);
                     // Die Klasse Writer wird aufgerufen, um die neuen Einträge in die Datei zu schreiben.
+                    final Writer person = new Writer(scan);
                     instructions();
                     convertNumberToMethod();
                     break;
                 case 3:
                     System.out.println("\nYou want to delete an entry.");
+                    // Die Klasse DeletePerson wird aufgerufen, um Einträge zu löschen
                     final DeletePerson deletePerson = new DeletePerson(scan);
                     instructions();
                     convertNumberToMethod();
                     break;
                 case 4:
+                    // Das Programm wird beendet
                     System.out.println("\nShutting down...");
                     break;
                 default:
@@ -57,10 +59,11 @@ public class AddressDatabase {
                     instructions();
                     convertNumberToMethod();
             }
+            // Exception für ungültige Benutzereingabe
         } catch (InputMismatchException e) {
             System.out.println("Invalid input, please try something else.");
-            scan.nextLine();
-            instructions();
+            scan.nextLine(); //Scanner-Puffer leeren
+            instructions(); // Programm wird neu gestartet
             convertNumberToMethod();
         }
     }
