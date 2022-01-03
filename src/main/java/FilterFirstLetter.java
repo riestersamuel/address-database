@@ -11,7 +11,7 @@ public class FilterFirstLetter {
         String letter;
         System.out.println("\nEnter the first letter of the person's last name you're searching for: ");
         letter = scan.next();
-        System.out.println("\nThese matching entries were found: ");
+        System.out.println("\nThese matching entries were found ... ");
         try {
             String myFileName = "address.txt";
             int line;
@@ -53,7 +53,7 @@ public class FilterFirstLetter {
                 }
             }
             if (!atLeastOneMatchingEntry) {
-                System.out.println("Sorry, no matching entries were found.");
+                System.out.println("\nSorry, no matching entries were found.");
             }
 
             //Fehlermeldung, wenn Datei nicht gefunden wird
