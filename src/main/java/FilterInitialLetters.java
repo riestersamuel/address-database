@@ -6,8 +6,7 @@ import java.util.Scanner;
 
 public class FilterInitialLetters {
     public FilterInitialLetters(Scanner scan) {
-
-        //für den Anfangsbuchstaben
+        //Für einen Bereich von Anfangsbuchstaben des Nachnamens
         String letter;
 
         System.out.println("\nEnter the letters you're searching for (in the format L-S): ");
@@ -16,10 +15,10 @@ public class FilterInitialLetters {
             String myFileName = "address.txt";
             int line;
 
-            //neue Liste mit allen Einträgen der Textdatei wird aufgerufen
+            //Neue Liste mit allen Einträgen der Textdatei wird aufgerufen
             List<String> allFileEntries = Files.readAllLines(Paths.get(myFileName));
 
-            //Versuch 2:
+            //Versuch 2 aka Bugfix
             boolean atLeastOneMatchingEntry = false;
             for (int i = 0; i < allFileEntries.size(); i++) {
                 String dataAtLineI = allFileEntries.get(i).toUpperCase();
@@ -30,9 +29,11 @@ public class FilterInitialLetters {
             }
             if (!atLeastOneMatchingEntry) {
                 System.out.println("\nSorry, no matching entries were found.");
-            } else {
+            }
+            //Wenn es mindestens einen passenden Eintrag gibt, soll eine passende Nachricht und alle Einträge angezeigt werden.
+            else {
                 System.out.println("\nThese matching entries were found:");
-                //solange i kleiner ist als die Anzahl der Zeilen wird der Name gesucht
+                //Solange i kleiner ist als die Anzahl der Zeilen wird der Name gesucht
                 for (int i = 0; i < allFileEntries.size(); i++) {
                     String myNextLine = allFileEntries.get(i).toUpperCase();
                     String[] newWord = myNextLine.split(" ");
@@ -50,7 +51,7 @@ public class FilterInitialLetters {
                 }
             }*/
             }
-        } catch (IOException ex) {
+        } catch (IOException ex) {//Fehlermeldung, wenn Datei nicht gefunden wird
             System.out.println("Error. Data not found.");
         }
 

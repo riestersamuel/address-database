@@ -9,15 +9,15 @@ public class DeletePerson {
     String deleteName;
 
     public DeletePerson(Scanner scan) {
-        //Name eingeben, wessen Einträge gelöscht werden sollen
         System.out.println("Enter the name of the person you want to delete: ");
+        //Name eingeben, wessen Einträge gelöscht werden sollen
         this.deleteName = scan.next();
         System.out.println(deleteName + " was deleted!");
 
         try {
             //Zuerst zu löschende Zeile suchen
             String myFileName = "address.txt";
-            //bis jetzt ist die Zeile noch unentdeckt daher leer
+            //Nis jetzt ist die Zeile noch unentdeckt daher leer
             int lineToBeDeleted = -1;
 
             //neue Liste mit allen Einträgen der Textdatei wird aufgerufen
@@ -44,7 +44,7 @@ public class DeletePerson {
                 //schreibt den Eintrag wieder auf die Festplatte
                 myFileWriter.flush();
             }
-        } catch (IOException ex) {
+        } catch (IOException ex) { //Fehler und Exceptions für uns als Entwickler offensichtlich machen
             System.out.println("Error. Data not found.");
         }
 

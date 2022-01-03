@@ -4,10 +4,12 @@ import java.nio.file.Paths;
 import java.util.List;
 import java.util.Scanner;
 
+//Diese Klasse wird nicht genutzt und kann eigentlich gelöscht werden.
+
 public class FilterLastLetter {
 
     public FilterLastLetter(Scanner scan) {
-        //für den Endbuchstaben
+        //Für den letzten Buchstaben
         String letter;
 
             System.out.println("\nEnter the last letter you're searching for: ");

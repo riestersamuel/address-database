@@ -6,18 +6,18 @@ import java.util.Scanner;
 
 public class FilterFirstLetterOfFirstName {
     public FilterFirstLetterOfFirstName(Scanner scan) {
-        //für den Anfangsbuchstaben
+        //Für den Anfangsbuchstaben des Vornamens
         String letter;
-        System.out.println("\nEnter the first letter of the person's last name you're searching for: ");
+        System.out.println("\nEnter the first letter of the person's first name you're searching for: ");
         letter = scan.next();
         try {
             //Idee: Wenn keine Einträge für den Buchstaben gefunden wurden, dann lass es den Nutzer wissen.
             String myFileName = "address.txt";
             int line;
-            //neue Liste mit allen Einträgen der Textdatei wird aufgerufen
+            //Neue Liste mit allen Einträgen der Textdatei wird aufgerufen
             List<String> allFileEntries = Files.readAllLines(Paths.get(myFileName));
 
-            //Versuch 2
+            //Versuch 2 aka Bugfix
             boolean atLeastOneMatchingEntry = false;
             for (int i = 0; i < allFileEntries.size(); i++) {
                 String dataAtLineI = allFileEntries.get(i).toUpperCase();
@@ -32,16 +32,18 @@ public class FilterFirstLetterOfFirstName {
             if (!atLeastOneMatchingEntry) {
                 System.out.println("\nSorry, no matching entries were found.");
             }
-
-            else {System.out.println("\nThese matching entries were found ... ");
-                //solange i kleiner ist als die Anzahl der Zeilen wird der Name gesucht
+            //Wenn es mindestens einen passenden Eintrag gibt, soll eine passende Nachricht und alle Einträge angezeigt werden.
+            else {
+                System.out.println("\nThese matching entries were found ... ");
+                //Solange i kleiner ist als die Anzahl der Zeilen wird der Name gesucht
                 for (int i = 0; i < allFileEntries.size(); i++) {
                     String myNextLine = allFileEntries.get(i).toUpperCase();
                     String[] newWord = myNextLine.split(" ");
                     if (newWord[0].startsWith(letter.toUpperCase())) {
                         line = i;//Zeile gefunden
                         System.out.println(allFileEntries.get(line));
-                    }}
+                    }
+                }
 
             }
 
@@ -54,8 +56,7 @@ public class FilterFirstLetterOfFirstName {
                 }
             }*/
 
-            //Fehlermeldung, wenn Datei nicht gefunden wird
-        } catch (IOException ex) {
+        } catch (IOException ex) {//Fehlermeldung, wenn Datei nicht gefunden wird
             System.out.println("Error. Data not found.");
         }
 
