@@ -12,13 +12,13 @@ public class FilterFirstLetter {
         System.out.println("\nEnter the first letter of the person's last name you're searching for: ");
         letter = scan.next();
         try {
-            //Versuch 2
             //Idee: Wenn keine Einträge für den Buchstaben gefunden wurden, dann lass es den Nutzer wissen.
             String myFileName = "address.txt";
             int line;
-
             //neue Liste mit allen Einträgen der Textdatei wird aufgerufen
             List<String> allFileEntries = Files.readAllLines(Paths.get(myFileName));
+
+            //Versuch 2
             boolean atLeastOneMatchingEntry = false;
             for (int i = 0; i < allFileEntries.size(); i++) {
                 String dataAtLineI = allFileEntries.get(i).toUpperCase();
@@ -33,6 +33,7 @@ public class FilterFirstLetter {
             if (!atLeastOneMatchingEntry) {
                 System.out.println("\nSorry, no matching entries were found.");
             }
+
             else {System.out.println("\nThese matching entries were found ... ");
                 //solange i kleiner ist als die Anzahl der Zeilen wird der Name gesucht
                 for (int i = 0; i < allFileEntries.size(); i++) {
