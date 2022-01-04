@@ -9,9 +9,10 @@ public class DeletePerson {
     String deleteName;
 
     public DeletePerson(Scanner scan) {
-        System.out.println("Enter the name of the person you want to delete: ");
+        System.out.println("Enter the first and last name of the person you want to delete: ");
         //Name eingeben, wessen Einträge gelöscht werden sollen
-        this.deleteName = scan.next();
+        scan.nextLine();
+        this.deleteName = scan.nextLine();
         System.out.println(deleteName + " was deleted!");
 
         try {
@@ -25,8 +26,9 @@ public class DeletePerson {
 
             //solange i kleiner ist als die Anzahl der Zeilen wird der Name gesucht
             for (int i = 0; i < allFileEntries.size(); i++) {
-                String myNextLine = allFileEntries.get(i);
-                if (myNextLine.contains(deleteName)) {
+                String myNextLine = allFileEntries.get(i).toUpperCase();
+                String[] newWord = myNextLine.split(",");
+                if (newWord[0].contains(deleteName.toUpperCase())) {
                     lineToBeDeleted = i;//Zeile gefunden
                     break;
                 }

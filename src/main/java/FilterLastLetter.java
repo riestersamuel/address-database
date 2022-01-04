@@ -21,7 +21,7 @@ public class FilterLastLetter {
 
                 //neue Liste mit allen Einträgen der Textdatei wird aufgerufen
                 List<String> allFileEntries = Files.readAllLines(Paths.get(myFileName));
-
+                boolean found = false;
                 //solange i kleiner ist als die Anzahl der Zeilen wird der Name gesucht
                 for (int i = 0; i < allFileEntries.size(); i++) {
                     String myNextLine = allFileEntries.get(i);
@@ -29,7 +29,12 @@ public class FilterLastLetter {
                     if (newLine[0].endsWith(letter)) {
                         line = i;//Zeile gefunden
                         System.out.println(allFileEntries.get(line));
+                        found = true;
                     }
+                }
+
+                if(!found){
+                    System.out.println("\nThese matching entries were found:");
                 }
                 /*for (int i = 0; i < 1; i++) {
                     String myNextLine = allFileEntries.get(i);
