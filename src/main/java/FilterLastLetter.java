@@ -12,30 +12,30 @@ public class FilterLastLetter {
         //Für den letzten Buchstaben
         String letter;
 
-            System.out.println("\nEnter the last letter you're searching for: ");
-            letter = scan.next();
-            System.out.println("\nThese are your entries ending with this letter: ");
-            try {
-                String myFileName = "address.txt";
-                int line;
+        System.out.println("\nEnter the last letter you're searching for: ");
+        letter = scan.next();
+        System.out.println("\nThese are your entries ending with this letter: ");
+        try {
+            String myFileName = "address.txt";
+            int line;
 
-                //neue Liste mit allen Einträgen der Textdatei wird aufgerufen
-                List<String> allFileEntries = Files.readAllLines(Paths.get(myFileName));
-                boolean found = false;
-                //solange i kleiner ist als die Anzahl der Zeilen wird der Name gesucht
-                for (int i = 0; i < allFileEntries.size(); i++) {
-                    String myNextLine = allFileEntries.get(i);
-                    String[] newLine = myNextLine.split(",");
-                    if (newLine[0].endsWith(letter)) {
-                        line = i;//Zeile gefunden
-                        System.out.println(allFileEntries.get(line));
-                        found = true;
-                    }
+            //neue Liste mit allen Einträgen der Textdatei wird aufgerufen
+            List<String> allFileEntries = Files.readAllLines(Paths.get(myFileName));
+            boolean found = false;
+            //solange i kleiner ist als die Anzahl der Zeilen wird der Name gesucht
+            for (int i = 0; i < allFileEntries.size(); i++) {
+                String myNextLine = allFileEntries.get(i);
+                String[] newLine = myNextLine.split(",");
+                if (newLine[0].endsWith(letter)) {
+                    line = i;//Zeile gefunden
+                    System.out.println(allFileEntries.get(line));
+                    found = true;
                 }
+            }
 
-                if(!found){
-                    System.out.println("\nThese matching entries were found:");
-                }
+            if (!found) {
+                System.out.println("\nThese matching entries were found:");
+            }
                 /*for (int i = 0; i < 1; i++) {
                     String myNextLine = allFileEntries.get(i);
                     if (!(myNextLine.endsWith(letter))) {
@@ -43,10 +43,10 @@ public class FilterLastLetter {
                     }
                 }*/
 
-            } catch (IOException ex) {
-                System.out.println("Error. Data not found.");
-            }
+        } catch (IOException ex) {
+            System.out.println("Error. Data not found.");
         }
     }
+}
 
 

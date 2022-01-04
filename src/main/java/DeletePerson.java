@@ -13,12 +13,13 @@ public class DeletePerson {
         //Name eingeben, wessen Einträge gelöscht werden sollen
         scan.nextLine();
         this.deleteName = scan.nextLine();
+        // Name der Person, die gelöscht werden soll wird ausgegeben
         System.out.println(deleteName + " was deleted!");
 
         try {
             //Zuerst zu löschende Zeile suchen
             String myFileName = "address.txt";
-            //Nis jetzt ist die Zeile noch unentdeckt daher leer
+            //Bis jetzt ist die Zeile noch unentdeckt daher leer
             int lineToBeDeleted = -1;
 
             //neue Liste mit allen Einträgen der Textdatei wird aufgerufen

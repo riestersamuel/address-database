@@ -6,10 +6,12 @@ import java.util.Scanner;
 
 public class FilterInitialLetters {
     public FilterInitialLetters(Scanner scan) {
-        //Für einen Bereich von Anfangsbuchstaben des Nachnamens
+        //Filter für einen Bereich von Anfangsbuchstaben des Nachnamens
         String letter;
 
         System.out.println("\nEnter the letters you're searching for (in the format L-S): ");
+        /*Anfangs- und Endbuchstabe eingeben. Es werden die Namen gesucht deren Anfangsbuchstaben
+         im Alphabet zwischen den eingegebenen Buchstaben liegen.*/
         letter = scan.next();
         try {
             String myFileName = "address.txt";
@@ -27,6 +29,7 @@ public class FilterInitialLetters {
                     break;
                 }
             }
+            // Wenn kein Eintrag mit dem eingegebenen Buchstabenbereich beginnt wird eine Fehlermeldung ausgegeben.
             if (!atLeastOneMatchingEntry) {
                 System.out.println("\nSorry, no matching entries were found.");
             }
@@ -35,8 +38,11 @@ public class FilterInitialLetters {
                 System.out.println("\nThese matching entries were found:");
                 //Solange i kleiner ist als die Anzahl der Zeilen wird der Name gesucht
                 for (int i = 0; i < allFileEntries.size(); i++) {
+                    // die Textdatei wird zeilenweise ausgelesen und in Großbuchstaben umgewandelt
                     String myNextLine = allFileEntries.get(i).toUpperCase();
+                    // Jedes Zeichen der Zeile, das durch ein Leerzeichen getrennt ist, wird als einzelner Sting in einem Array gespeichert.
                     String[] newWord = myNextLine.split(" ");
+                    // Wenn der Sting am Index 0 mit einem der Buchstaben beginnt, wird die Zeile ausgegeben.
                     if (newWord[1].matches("^[" + letter.toUpperCase() + "].*")) {
                         line = i;//Zeile gefunden
                         System.out.println(allFileEntries.get(line));

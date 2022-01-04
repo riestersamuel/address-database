@@ -17,38 +17,44 @@ public class FilterSwitch {
         //Der Nutzer soll eine Zahl eingegeben. Diese ruft dann die Methode mit dem Filter auf.
         System.out.println("Please enter a number: ");
 
-        try{
+        try {
             final int inputNumber = scan.nextInt();
-        switch (inputNumber) {
-            case 0:
-                final FilterFirstLetter filter1 = new FilterFirstLetter(scan);
-                filterInstructions();
-                convertNumberToFilter(scan);
-                break;
-            case 1:
-                final FilterInitialLetters filter2 = new FilterInitialLetters(scan);
-                filterInstructions();
-                convertNumberToFilter(scan);
-                break;
-            case 2:
-                final FilterFirstLetterOfFirstName filter3 = new FilterFirstLetterOfFirstName(scan);
-                filterInstructions();
-                convertNumberToFilter(scan);
-                break;
-            case 3:
-                AddressDatabase.instructions();
-                AddressDatabase.convertNumberToMethod();
-                break;
+            switch (inputNumber) {
+                case 0:
+                    // Wenn 0 eingegeben wird, wird nach dem Anfangsbuchstaben des Nachnamens gefiltert.
+                    final FilterFirstLetter filter1 = new FilterFirstLetter(scan);
+                    filterInstructions();
+                    convertNumberToFilter(scan);
+                    break;
+                case 1:
+                    // Wenn 1 eingegeben wird, wird nach mehreren Anfangsbuchstaben des Nachnamens gefiltert
+                    final FilterInitialLetters filter2 = new FilterInitialLetters(scan);
+                    filterInstructions();
+                    convertNumberToFilter(scan);
+                    break;
+                case 2:
+                    // Wenn 2 eingegeben wird, wird nach dem Anfangsbuchstaben des Vornamen gefiltert.
+                    final FilterFirstLetterOfFirstName filter3 = new FilterFirstLetterOfFirstName(scan);
+                    filterInstructions();
+                    convertNumberToFilter(scan);
+                    break;
+                case 3:
+                    // Wenn 3 eingegeben wird, wird die Startseite angezeigt.
+                    AddressDatabase.instructions();
+                    AddressDatabase.convertNumberToMethod();
+                    break;
 
 
-            default:
-                System.out.println("Sorry, this number doesn't do anything.");
-                filterInstructions();
-                convertNumberToFilter(scan);
-        }
+                default:
+                    // Wenn eine ungültige Zahl eingegeben wird, wird eine Fehlermeldung ausgegeben.
+                    System.out.println("Sorry, this number doesn't do anything.");
+                    filterInstructions();
+                    convertNumberToFilter(scan);
+            }
         }
         // Exception für ungültige Benutzereingabe
-        catch(InputMismatchException e){
+        catch (InputMismatchException e) {
+            // Fehlermeldung wird angegeben.
             System.out.println("Invalid input, please try something else.");
             scan.nextLine(); // Scanner-Puffer leeren
             filterInstructions(); // Filter Switch wird neu gestartet
