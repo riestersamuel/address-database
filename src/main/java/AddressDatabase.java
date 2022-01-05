@@ -52,8 +52,8 @@ public class AddressDatabase {
                     break;
                 case 4:
                     // Das Programm wird beendet
-                    System.exit(0);
                     System.out.println("\nShutting down...");
+                    System.exit(0);
                     break;
                 default:
                     System.out.println("\nSorry, this number doesn't do anything.");
