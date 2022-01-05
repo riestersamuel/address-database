@@ -52,6 +52,7 @@ public class AddressDatabase {
                     break;
                 case 4:
                     // Das Programm wird beendet
+                    System.exit(0);
                     System.out.println("\nShutting down...");
                     break;
                 default:
