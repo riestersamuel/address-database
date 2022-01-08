@@ -5,8 +5,8 @@ import java.io.IOException;
 // Klasse um Text aus einer Datei zu lesen
 class Reader {
     public static void read() throws IOException {
-        try {
 
+        try {
             BufferedReader newReader = new BufferedReader(new FileReader("address.txt"));
             String line;
             while ((line = newReader.readLine()) != null) {

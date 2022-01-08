@@ -47,7 +47,6 @@ public class AddressDatabase {
                 case 3:
                     // Die Klasse DeletePerson wird aufgerufen, um Einträge zu löschen
                     DeletePerson.deleteThisPerson(scan);
-
                     instructions();
                     convertNumberToMethod();
                     break;

@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class FilterInitialLetters {
-    public FilterInitialLetters(Scanner scan) {
+    public static void FilterInitial(Scanner scan) {
         //Filter für einen Bereich von Anfangsbuchstaben des Nachnamens
         String letter;
 
@@ -20,7 +20,6 @@ public class FilterInitialLetters {
             //Neue Liste mit allen Einträgen der Textdatei wird aufgerufen
             List<String> allFileEntries = Files.readAllLines(Paths.get(myFileName));
 
-            //Versuch 2 aka Bugfix
             boolean atLeastOneMatchingEntry = false;
             for (int i = 0; i < allFileEntries.size(); i++) {
                 String dataAtLineI = allFileEntries.get(i).toUpperCase();

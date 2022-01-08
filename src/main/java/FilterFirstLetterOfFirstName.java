@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class FilterFirstLetterOfFirstName {
-    public FilterFirstLetterOfFirstName(Scanner scan) {
+    public static void FilterFirstLetterOfFirst(Scanner scan) {
         //Für den Anfangsbuchstaben des Vornamens
         String letter;
         System.out.println("\nEnter the first letter of the person's first name you're searching for: ");
@@ -17,7 +17,6 @@ public class FilterFirstLetterOfFirstName {
             //Neue Liste mit allen Einträgen der Textdatei wird aufgerufen
             List<String> allFileEntries = Files.readAllLines(Paths.get(myFileName));
 
-            //Versuch 2 aka Bugfix
             boolean atLeastOneMatchingEntry = false;
             for (int i = 0; i < allFileEntries.size(); i++) {
                 String dataAtLineI = allFileEntries.get(i).toUpperCase();

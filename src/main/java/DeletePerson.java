@@ -5,9 +5,9 @@ import java.util.List;
 import java.util.Scanner;
 
 public class DeletePerson {
-    //Konstruktor um einen bereits vorhandenen Eintrag zu löschen
 
-    public static void deleteThisPerson(Scanner scan){
+    //Methode um einen bereits vorhandenen Eintrag zu löschen
+    public static void deleteThisPerson(Scanner scan) {
         String deleteName;
         System.out.println("Enter the first and last name of the person you want to delete: ");
         //Name eingeben, wessen Einträge gelöscht werden sollen

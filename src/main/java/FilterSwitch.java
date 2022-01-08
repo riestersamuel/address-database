@@ -22,19 +22,19 @@ public class FilterSwitch {
             switch (inputNumber) {
                 case 0:
                     // Wenn 0 eingegeben wird, wird nach dem Anfangsbuchstaben des Nachnamens gefiltert.
-                    final FilterFirstLetter filter1 = new FilterFirstLetter(scan);
+                    FilterFirstLetter.filterfirst(scan);
                     filterInstructions();
                     convertNumberToFilter(scan);
                     break;
                 case 1:
                     // Wenn 1 eingegeben wird, wird nach mehreren Anfangsbuchstaben des Nachnamens gefiltert
-                    final FilterInitialLetters filter2 = new FilterInitialLetters(scan);
+                    FilterInitialLetters.FilterInitial(scan);
                     filterInstructions();
                     convertNumberToFilter(scan);
                     break;
                 case 2:
                     // Wenn 2 eingegeben wird, wird nach dem Anfangsbuchstaben des Vornamen gefiltert.
-                    final FilterFirstLetterOfFirstName filter3 = new FilterFirstLetterOfFirstName(scan);
+                    FilterFirstLetterOfFirstName.FilterFirstLetterOfFirst(scan);
                     filterInstructions();
                     convertNumberToFilter(scan);
                     break;
