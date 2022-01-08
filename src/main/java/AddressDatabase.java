@@ -2,8 +2,6 @@ import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-
-//Nur zum Commiten
 public class AddressDatabase {
     static final Scanner scan = new Scanner(System.in);
 

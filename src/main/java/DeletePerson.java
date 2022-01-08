@@ -4,8 +4,6 @@ import java.nio.file.Paths;
 import java.util.List;
 import java.util.Scanner;
 
-//Nur zum Commiten
-
 public class DeletePerson {
     //Konstruktor um einen bereits vorhandenen Eintrag zu löschen
 
