@@ -1,6 +1,6 @@
 import java.io.*;
 import java.util.Scanner;
-
+//Nur zum Commiten
 // Klasse um Text in einer Datei abzuspeichern
 public class Writer {
     public static void write(Scanner scan) {
