@@ -14,7 +14,7 @@ public class DeletePerson {
         scan.nextLine();
         this.deleteName = scan.nextLine();
         // Name der Person, die gelöscht werden soll wird ausgegeben
-        System.out.println(deleteName + " was deleted!");
+        System.out.println(deleteName + " has been deleted!");
 
         try {
             //Zuerst zu löschende Zeile suchen
@@ -48,7 +48,7 @@ public class DeletePerson {
                 myFileWriter.flush();
             }
         } catch (IOException ex) { //Fehler und Exceptions für uns als Entwickler offensichtlich machen
-            System.out.println("Error. Data not found.");
+            System.out.println("Error. Data not found." + ex.getMessage());
         }
 
     }

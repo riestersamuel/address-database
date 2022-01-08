@@ -44,7 +44,7 @@ public class FilterLastLetter {
                 }*/
 
         } catch (IOException ex) {
-            System.out.println("Error. Data not found.");
+            System.out.println("Error. Data not found." + ex.getMessage());
         }
     }
 }

@@ -58,7 +58,7 @@ public class FilterInitialLetters {
             }*/
             }
         } catch (IOException ex) {//Fehlermeldung, wenn Datei nicht gefunden wird
-            System.out.println("Error. Data not found.");
+            System.out.println("Error. Data not found." + ex.getMessage());
         }
 
     }
