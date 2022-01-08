@@ -1,4 +1,4 @@
-package org.example;
+import org.example.App;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -15,5 +15,4 @@ public class AppTest {
     }
 
     //Ab hier kommen unsere eigenen Tests
-
    }

@@ -25,7 +25,7 @@ public class AddressDatabase {
                 case 0:
                     System.out.println("\nCurrent person entries:");
                     // Die Klasse Reader wird aufgerufen, um die Einträge aus der Datei zu lesen.
-                    final Reader reader = new Reader();
+                    Reader.read();
                     // Mit dem folgenden Code startet sich die Anleitung und das Bedienfeld automatisch selbst neu ...
                     // Dies ist natürlich auch bei den anderen Cases der Fall.
                     instructions();
@@ -40,13 +40,14 @@ public class AddressDatabase {
                     break;
                 case 2:
                     // Die Klasse Writer wird aufgerufen, um die neuen Einträge in die Datei zu schreiben.
-                    final Writer person = new Writer(scan);
+                    Writer.write(scan);
                     instructions();
                     convertNumberToMethod();
                     break;
                 case 3:
                     // Die Klasse DeletePerson wird aufgerufen, um Einträge zu löschen
-                    final DeletePerson deletePerson = new DeletePerson(scan);
+                    DeletePerson.deleteThisPerson(scan);
+
                     instructions();
                     convertNumberToMethod();
                     break;

@@ -6,13 +6,13 @@ import java.util.Scanner;
 
 public class DeletePerson {
     //Konstruktor um einen bereits vorhandenen Eintrag zu löschen
-    String deleteName;
 
-    public DeletePerson(Scanner scan) {
+    public static void deleteThisPerson(Scanner scan){
+        String deleteName;
         System.out.println("Enter the first and last name of the person you want to delete: ");
         //Name eingeben, wessen Einträge gelöscht werden sollen
         scan.nextLine();
-        this.deleteName = scan.nextLine();
+        deleteName = scan.nextLine();
         // Name der Person, die gelöscht werden soll wird ausgegeben
         System.out.println(deleteName + " has been deleted!");
 
@@ -50,6 +50,5 @@ public class DeletePerson {
         } catch (IOException ex) { //Fehler und Exceptions für uns als Entwickler offensichtlich machen
             System.out.println("Error. Data not found." + ex.getMessage());
         }
-
     }
 }

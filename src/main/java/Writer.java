@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 // Klasse um Text in einer Datei abzuspeichern
 public class Writer {
-    public Writer(Scanner scan) {
+    public static void write(Scanner scan) {
         //Klasse NewPerson wird aufgerufen, um neue Einträge zu erstellen.
         NewPerson person = new NewPerson(scan);
         String firstname = person.firstName;

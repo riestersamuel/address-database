@@ -4,7 +4,7 @@ import java.io.IOException;
 
 // Klasse um Text aus einer Datei zu lesen
 class Reader {
-    public Reader() throws IOException {
+    public static void read() throws IOException {
         try {
 
             BufferedReader newReader = new BufferedReader(new FileReader("address.txt"));
