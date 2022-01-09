@@ -14,7 +14,7 @@ public class Writer {
         try {
             // neuer Filewriter wird erstellt
             FileWriter myWriter = new FileWriter("address.txt", true);
-            // // Die Einträge werden in einer Datei gespeichert.
+            // Die Einträge werden in einer Datei gespeichert.
             myWriter.write(firstname + " " + secondname + ", mail: " + mail + ", number: " + number + " " + '\n');
 
             //schließt den Filewriter

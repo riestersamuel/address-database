@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class NewPerson {
     String firstName, secondName, mail, number;
 
-    //Konstruktor um eine neue Person hinzuzufügen
+    //Konstruktor um eine neue Person hinzuzufügen.
     public NewPerson(Scanner scan) {
         System.out.println("Enter your first name: ");
         this.firstName = scan.next();

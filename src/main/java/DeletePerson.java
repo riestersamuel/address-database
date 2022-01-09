@@ -6,14 +6,14 @@ import java.util.Scanner;
 
 public class DeletePerson {
 
-    //Methode um einen bereits vorhandenen Eintrag zu löschen
+    //Methode um einen bereits vorhandenen Eintrag zu löschen.
     public static void deleteThisPerson(Scanner scan) {
         String deleteName;
         System.out.println("Enter the first and last name of the person you want to delete: ");
-        //Name eingeben, wessen Einträge gelöscht werden sollen
+        //Name eingeben, wessen Einträge gelöscht werden sollen.
         scan.nextLine();
         deleteName = scan.nextLine();
-        // Name der Person, die gelöscht werden soll wird ausgegeben
+        // Name der Person, die gelöscht werden soll wird ausgegeben.
         System.out.println(deleteName + " has been deleted!");
 
         try {

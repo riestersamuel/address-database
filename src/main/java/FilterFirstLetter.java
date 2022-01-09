@@ -12,7 +12,6 @@ public class FilterFirstLetter {
         System.out.println("\nEnter the first letter of the person's last name you're searching for: ");
         letter = scan.next();
         try {
-            //Idee: Wenn keine Einträge für den Buchstaben gefunden wurden, dann lass es den Nutzer wissen.
             String myFileName = "address.txt";
             int line;
             //Neue Liste mit allen Einträgen der Textdatei wird aufgerufen
