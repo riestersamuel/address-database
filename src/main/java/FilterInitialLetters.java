@@ -3,15 +3,15 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
 import java.util.Scanner;
-
+/*
 public class FilterInitialLetters {
     public static void FilterInitial(Scanner scan) {
         //Filter für einen Bereich von Anfangsbuchstaben des Nachnamens
         String letter;
 
         System.out.println("\nEnter the letters you're searching for (in the format L-S): ");
-        /*Anfangs- und Endbuchstabe eingeben. Es werden die Namen gesucht deren Anfangsbuchstaben
-         im Alphabet zwischen den eingegebenen Buchstaben liegen.*/
+        Anfangs- und Endbuchstabe eingeben. Es werden die Namen gesucht deren Anfangsbuchstaben
+         im Alphabet zwischen den eingegebenen Buchstaben liegen.
         letter = scan.next();
         try {
             String myFileName = "address.txt";
@@ -54,7 +54,7 @@ public class FilterInitialLetters {
 
     }
 
-}
+}*/
 
 
 

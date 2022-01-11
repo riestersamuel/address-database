@@ -4,7 +4,7 @@ import java.nio.file.Paths;
 import java.util.List;
 import java.util.Locale;
 import java.util.Scanner;
-
+/*
 public class FilterFirstLetter {
     public static void filterfirst(Scanner scan) {
         //Filter für den Anfangsbuchstaben des Nachnamens
@@ -47,13 +47,13 @@ public class FilterFirstLetter {
             }
 
             //Versuch 1: Wenn Buchstabe der gesucht wurde nicht existiert
-            /*for (int i = 0; i < allFileEntries.size(); i++) {
+            for (int i = 0; i < allFileEntries.size(); i++) {
                 String myNextLine = allFileEntries.get(i);
                 if (!(myNextLine.startsWith(letter.toUpperCase()))) {
                     System.out.println("Sorry, no matching entries were found!");
                     break;
                 }
-            }*/
+            }
 
         } catch (IOException ex) {
             //Fehlermeldung, wenn Datei nicht gefunden wird
@@ -61,4 +61,4 @@ public class FilterFirstLetter {
         }
 
     }
-}
+}*/

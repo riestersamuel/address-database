@@ -2,12 +2,8 @@ import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
-import java.util.Scanner;
+import java.util.Scanner;/*
 public class FilterFirstLetterOfFirstName {
-    /**
-     *
-     * @param scan
-     */
     public static void FilterFirstLetterOfFirst(Scanner scan) {
         //Für den Anfangsbuchstaben des Vornamens
         String letter;
@@ -53,4 +49,4 @@ public class FilterFirstLetterOfFirstName {
         }
 
     }
-}
+}*/
