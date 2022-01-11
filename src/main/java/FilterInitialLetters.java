@@ -47,14 +47,6 @@ public class FilterInitialLetters {
                         System.out.println(allFileEntries.get(line));
                     }
                 }
-
-                //Versuch 1: Wenn Buchstabe der gesucht wurde nicht existiert
-            /*for (int i = 0; i < 1; i++) {
-                String myNextLine = allFileEntries.get(i);
-                if (!(myNextLine.matches("^[" + letter.toUpperCase() + "].*"))) {
-                    System.out.println("Sorry, no matching entries were found.");
-                }
-            }*/
             }
         } catch (IOException ex) {//Fehlermeldung, wenn Datei nicht gefunden wird
             System.out.println("Error. Data not found." + ex.getMessage());
