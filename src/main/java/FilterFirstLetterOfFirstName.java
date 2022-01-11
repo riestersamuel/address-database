@@ -5,6 +5,10 @@ import java.util.List;
 import java.util.Scanner;
 
 public class FilterFirstLetterOfFirstName {
+    /**
+     *
+     * @param scan
+     */
     public static void FilterFirstLetterOfFirst(Scanner scan) {
         //Für den Anfangsbuchstaben des Vornamens
         String letter;

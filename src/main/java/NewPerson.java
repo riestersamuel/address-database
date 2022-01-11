@@ -6,13 +6,15 @@ public class NewPerson {
     //Konstruktor um eine neue Person hinzuzufügen.
     public NewPerson(Scanner scan) {
         System.out.println("Enter your first name: ");
-        this.firstName = scan.next();
+        this.firstName = scan.next().trim();
         System.out.println("Enter your second name: ");
-        this.secondName = scan.next();
+        scan.nextLine();
+        this.secondName = scan.nextLine().trim();
         System.out.println("Enter your mail address: ");
-        this.mail = scan.next();
+        this.mail = scan.next().trim();
         System.out.println("Enter your phone number: ");
-        this.number = scan.next();
+        scan.nextLine();
+        this.number = scan.nextLine().trim();
         System.out.println("You successfully added this person.");
     }
 }
