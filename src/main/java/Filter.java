@@ -14,13 +14,7 @@ public class Filter {
     final String myFileName = "address.txt";
 
 
-    public static void showFilterInstructions() {
-        System.out.println("\nPlease select your filter. Enter number ...");
-        System.out.println("0 to filter by the first letter of a person's last name.");
-        System.out.println("1 to filter by several initial letters (also concerning the last name).");
-        System.out.println("2 to filter by the first letter of a person's first name.");
-        System.out.println("3 to return to main page.\n");
-    }
+
 
     public Filter(Scanner scan) throws IOException {
         //try catch
@@ -35,7 +29,7 @@ public class Filter {
                 case 0:
                     // Wenn 0 eingegeben wird, wird nach dem Anfangsbuchstaben des Nachnamens gefiltert.
                     firstLetterLastName(scan);
-                    showFilterInstructions();
+                    UI.showFilterInstructions();
                     Filter c = new Filter(scan);
                     break;
                 case 1:

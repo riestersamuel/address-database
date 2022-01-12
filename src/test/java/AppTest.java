@@ -6,14 +6,10 @@ import org.junit.Test;
  * Unit test of class App.
  */
 public class AppTest {
-    /**
-     * Test for correct sum of two arguments.
-     */
     @Test
-    public void testApp() {
-        Filter.showFilterInstructions();
-        Assert.assertEquals( 33, App.add(30, 3));
+    public void firstLetterLastName(){
+        Filter.firstLetterLastName();
+        Assert.assertEquals();
     }
-
     //Ab hier kommen unsere eigenen Tests
    }
