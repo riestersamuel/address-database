@@ -13,15 +13,11 @@ public class Filter {
     static int line;
     final String myFileName = "address.txt";
 
-
-
-
     public Filter(Scanner scan) throws IOException {
-        //try catch
         allFileEntries = Files.readAllLines(Paths.get(myFileName));
 
         //Der Nutzer soll eine Zahl eingegeben. Diese ruft dann die Methode mit dem Filter auf.
-        System.out.println("Please enter a number: ");
+        UI.numberoutput();
 
         try {
             final int inputNumber = scan.nextInt();
@@ -35,13 +31,13 @@ public class Filter {
                 case 1:
                     // Wenn 1 eingegeben wird, wird nach mehreren Anfangsbuchstaben des Nachnamens gefiltert
                     InitialLetters(scan);
-                    showFilterInstructions();
+                    UI.showFilterInstructions();
                     Filter b = new Filter(scan);
                     break;
                 case 2:
                     // Wenn 2 eingegeben wird, wird nach dem Anfangsbuchstaben des Vornamen gefiltert.
                     firstLetterFirstName(scan);
-                    showFilterInstructions();
+                    UI.showFilterInstructions();
                     Filter a = new Filter(scan);
 
                     break;
@@ -54,7 +50,7 @@ public class Filter {
                 default:
                     // Wenn eine ungültige Zahl eingegeben wird, wird eine Fehlermeldung ausgegeben.
                     System.out.println("Sorry, this number doesn't do anything.");
-                    showFilterInstructions();
+                    UI.showFilterInstructions();
             }
         }
         // Exception für ungültige Benutzereingabe
@@ -62,7 +58,7 @@ public class Filter {
             // Fehlermeldung wird angegeben.
             System.out.println("Invalid input, please try something else.");
             scan.nextLine(); // Scanner-Puffer leeren
-            showFilterInstructions(); // Filter Switch wird neu gestartet
+            UI.showFilterInstructions(); // Filter Switch wird neu gestartet
             Filter d = new Filter(scan);
 
         }

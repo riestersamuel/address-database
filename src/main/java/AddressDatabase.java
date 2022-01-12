@@ -17,7 +17,7 @@ public class AddressDatabase {
 
     static void convertNumberToMethod() throws IOException {
         //Der Nutzer soll eine Zahl eingegeben. Diese ruft dann die entsprechende Methode auf.
-        System.out.println("Please enter a number: ");
+        UI.numberoutput();
         //Falls der Nutzer etwas anderes als eine Zahl eingibt, soll sich die Methode neustarten. Das haben wir mithilfe von einem Try-Catch-Block gemacht.
         try {
             final int inputNumber = scan.nextInt();
@@ -33,7 +33,7 @@ public class AddressDatabase {
                     break;
                 case 1:
                     //Hiermit öffnet sich die Anleitung zu den Filtern. Der Nutzer kann wieder eine Zahl eingeben, um zu entscheiden, was er als Nächstes machen will.
-                    Filter.showFilterInstructions();
+                    UI.showFilterInstructions();
                     Filter f = new Filter(scan);
                     showinstructions();
                     convertNumberToMethod();
