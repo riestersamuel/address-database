@@ -11,6 +11,7 @@ public class AppTest {
      */
     @Test
     public void testApp() {
+        Filter.showFilterInstructions();
         Assert.assertEquals( 33, App.add(30, 3));
     }
 

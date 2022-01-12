@@ -15,7 +15,7 @@ public class AddressDatabase {
         System.out.println("4 to exit this program.\n");
     }
 
-    public static void convertNumberToMethod() throws IOException {
+    static void convertNumberToMethod() throws IOException {
         //Der Nutzer soll eine Zahl eingegeben. Diese ruft dann die entsprechende Methode auf.
         System.out.println("Please enter a number: ");
         //Falls der Nutzer etwas anderes als eine Zahl eingibt, soll sich die Methode neustarten. Das haben wir mithilfe von einem Try-Catch-Block gemacht.
