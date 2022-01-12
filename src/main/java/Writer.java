@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Writer {
     public static void write(Scanner scan) {
         //Klasse NewPerson wird aufgerufen, um neue Einträge zu erstellen.
-        NewPerson person = new NewPerson(scan);
+        Person person = new Person(scan);
         String firstname = person.firstName;
         String mail = person.mail;
         String number = person.number;
