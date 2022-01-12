@@ -17,43 +17,35 @@ public class AddressDatabase {
         System.out.println("4 to exit this program.\n");
     }
 
+    /**
+     * Der Nutzer soll eine Zahl eingegeben. Diese ruft dann die entsprechende Methode auf.
+     * Falls der Nutzer etwas anderes als eine Zahl eingibt, soll sich die Methode neustarten.
+     * Das haben wir mithilfe von einem Try-Catch-Block gemacht.
+     * Die Klasse Reader wird aufgerufen, um die Einträge aus der Datei zu lesen.
+     * Wir haben auch Code geschrieben, damit sich die Anleitung und das Bedienfeld automatisch
+     * selbst neu neustarten.
+     * Gibt der Nutzer 1 ein, soll der Case 1 gestartet werden, bei 2 Case 2, usw..
+     *
+     */
     static void convertNumberToMethod() throws IOException {
-        /**
-         * Der Nutzer soll eine Zahl eingegeben. Diese ruft dann die entsprechende Methode auf.
-         */
         UI.numberoutput();
-        /**
-         * Falls der Nutzer etwas anderes als eine Zahl eingibt, soll sich die Methode neustarten.
-         * Das haben wir mithilfe von einem Try-Catch-Block gemacht.
-         */
         try {
             final int inputNumber = scan.nextInt();
             switch (inputNumber) {
-                case 0:
+                case 0 -> {
                     System.out.println("\nCurrent person entries:");
-                    /**
-                     * Die Klasse Reader wird aufgerufen, um die Einträge aus der Datei zu lesen.
-                     */
+
                     Reader.read();
-                    /**
-                     * Mit dem folgenden Code startet sich die Anleitung und das Bedienfeld automatisch selbst neu ...
-                     * Dies ist natürlich auch bei den anderen Cases der Fall.
-                     */
                     showinstructions();
                     convertNumberToMethod();
-                    break;
-                case 1:
-                    /**
-                     * Hiermit öffnet sich die Anleitung zu den Filtern. Der Nutzer kann wieder eine Zahl eingeben, um zu entscheiden,
-                     * was er als Nächstes machen will.
-                     */
-
+                }
+                case 1 -> {
                     UI.showFilterInstructions();
                     Filter f = new Filter(scan);
                     showinstructions();
                     convertNumberToMethod();
-                    break;
-                case 2:
+                }
+                case 2 -> {
                     /**
                      * Die Klasse Writer wird aufgerufen, um die neuen Einträge in die Datei zu schreiben.
                      * */
@@ -61,26 +53,24 @@ public class AddressDatabase {
                     Writer.write(scan);
                     showinstructions();
                     convertNumberToMethod();
-                    break;
-                case 3:
-                    /**
-                     * Die Klasse DeletePerson wird aufgerufen, um Einträge zu löschen
-                     */
+                }
+                /**
+                 * Die Klasse DeletePerson wird aufgerufen, um Einträge zu löschen
+                 */
+                case 3 -> {
                     Person.deleteThisPerson(scan);
                     showinstructions();
                     convertNumberToMethod();
-                    break;
-                case 4:
-                    /**
-                     * Das Programm wird beendet
-                     */
+                }
+                case 4 -> {
                     System.out.println("\nShutting down...");
                     System.exit(0);
-                    break;
-                default:
+                }
+                default -> {
                     System.out.println("\nSorry, this number doesn't do anything.");
                     showinstructions();
                     convertNumberToMethod();
+                }
             }
         } catch (InputMismatchException e) {
             /**
