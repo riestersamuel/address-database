@@ -8,7 +8,9 @@ import java.util.Scanner;
 public class Person {
     String firstName, secondName, mail, number;
 
-    //Konstruktor um eine neue Person hinzuzufügen.
+    /**
+     * Konstruktor um eine neue Person hinzuzufügen.
+     */
     public Person(Scanner scan) {
         System.out.println("Enter your first name: ");
         this.firstName = scan.next().trim();
@@ -23,7 +25,9 @@ public class Person {
         System.out.println("You successfully added this person.");
     }
 
-    //Methode um einen bereits vorhandenen Eintrag zu löschen.
+    /**
+     * Methode um einen bereits vorhandenen Eintrag zu löschen.
+     */
     public static void deleteThisPerson(Scanner scan) {
         String deleteName;
         System.out.println("Enter the first and last name of the person you want to delete: ");
