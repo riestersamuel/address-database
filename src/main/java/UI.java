@@ -1,4 +1,7 @@
+import java.util.Scanner;
+
 public class UI {
+    static Filter filter = new Filter();
     /**
      * Filter instructions
      */
@@ -9,7 +12,26 @@ public class UI {
         System.out.println("2 to filter by the first letter of a person's first name.");
         System.out.println("3 to return to main page.\n");
     }
-    public static void numberoutput(){
+
+    public static void numberoutput() {
         System.out.println("Please enter a number: ");
     }
+
+    public static void wrongNumber() {
+        System.out.println("Invalid input, please try something else.");
+    }
+    public static void invalidInput(){
+        System.out.println("Sorry, this number doesn't do anything.");
+    }
+
+    /**
+     * Scanner
+     */
+    public static void scanletter(Scanner scan){
+        String letter;
+        letter = scan.next();
+        //system out print vom letter
+        filter.firstLetterFirstName(letter);
+    }
+
 }
