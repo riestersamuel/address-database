@@ -1,7 +1,9 @@
 import java.io.*;
 import java.util.Scanner;
 
-// Klasse um Text in einer Datei abzuspeichern
+/**
+ * Klasse um Text in einer Datei abzuspeichern
+ */
 public class Writer {
     public static void write(Scanner scan) {
         //Klasse NewPerson wird aufgerufen, um neue Einträge zu erstellen.

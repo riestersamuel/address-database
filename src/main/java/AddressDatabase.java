@@ -80,6 +80,7 @@ public class AddressDatabase {
 
     /**
      * Das hier wird einmalig automatisch beim Start des Programms aufgerufen, um es zum Laufen zu bringen.
+     * Danach läuft es weiter, bis man es stoppt.
      */
     public static void main(String[] args) throws IOException {
         showinstructions();

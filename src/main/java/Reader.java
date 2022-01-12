@@ -2,7 +2,9 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-// Klasse um Text aus einer Datei zu lesen
+/**
+ * Klasse um Text aus einer Datei zu lesen
+ */
 class Reader {
     public static void read() throws IOException {
 
