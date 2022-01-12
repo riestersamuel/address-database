@@ -30,8 +30,7 @@ public class UI {
     public static void scanletter(Scanner scan){
         String letter;
         letter = scan.next();
-        //system out print vom letter
-        filter.firstLetterFirstName(letter);
+        System.out.println(filter.firstLetterFirstName(letter));
     }
 
 }
