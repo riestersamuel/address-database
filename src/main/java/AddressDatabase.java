@@ -19,26 +19,23 @@ public class AddressDatabase {
 
     /**
      * Der Nutzer soll eine Zahl eingegeben. Diese ruft dann die entsprechende Methode auf.
+     * Gibt der Nutzer 1 ein, soll der Case 1 gestartet werden, bei 2 Case 2, und so weiter.
      * Falls der Nutzer etwas anderes als eine Zahl eingibt, soll sich die Methode neustarten.
-     * Das haben wir mithilfe von einem Try-Catch-Block gemacht.
-     * Die Klasse Reader wird aufgerufen, um die Einträge aus der Datei zu lesen.
-     * Wir haben auch Code geschrieben, damit sich die Anleitung und das Bedienfeld automatisch
-     * selbst neu neustarten.
-     * Gibt der Nutzer 1 ein, soll der Case 1 gestartet werden, bei 2 Case 2, usw..
-     * Die Klasse Writer wird aufgerufen, um die neuen Einträge in die Datei zu schreiben.
-     * Die Klasse DeletePerson wird aufgerufen, um Einträge zu löschen.
-     * Unten haben wir einen Catch der die Exception für ungültige Nutzereingabe auffängt.
-     * Wenn das passiert, lassen wir den Scanner-Puffer leeren und starten das Programm neu.
      */
+
     static void convertNumberToMethod() throws IOException {
         UI.numberoutput();
+        //Falls der Nutzer etwas anderes als eine Zahl eingibt, soll sich die Methode neustarten.
+        // Das haben wir mithilfe von einem Try-Catch-Block gemacht.
         try {
             final int inputNumber = scan.nextInt();
             switch (inputNumber) {
                 case 0 -> {
                     System.out.println("\nCurrent person entries:");
-
+                    //Die Klasse Reader wird aufgerufen, um die Einträge aus der Datei zu lesen.
                     Reader.read();
+                    //Wir haben auch Code geschrieben, damit sich die Anleitung und das Bedienfeld automatisch
+                    //selbst neu neustarten.
                     showinstructions();
                     convertNumberToMethod();
                 }
@@ -49,11 +46,13 @@ public class AddressDatabase {
                     convertNumberToMethod();
                 }
                 case 2 -> {
+                    //Die Klasse Writer wird aufgerufen, um die neuen Einträge in die Datei zu schreiben.
                     Writer.write(scan);
                     showinstructions();
                     convertNumberToMethod();
                 }
                 case 3 -> {
+                    //Die Klasse DeletePerson wird aufgerufen, um Einträge zu löschen.
                     Person.deleteThisPerson(scan);
                     showinstructions();
                     convertNumberToMethod();
@@ -69,8 +68,10 @@ public class AddressDatabase {
                 }
             }
         }
-        catch (InputMismatchException e) {
 
+        //Hier haben wir einen Catch der die Exception für ungültige Nutzereingabe auffängt.
+        //Wenn das passiert, lassen wir den Scanner-Puffer leeren und starten das Programm neu.
+        catch (InputMismatchException e) {
             System.out.println("Invalid input, please try something else.");
             scan.nextLine();
             showinstructions();
