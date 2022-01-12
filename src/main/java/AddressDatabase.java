@@ -25,7 +25,10 @@ public class AddressDatabase {
      * Wir haben auch Code geschrieben, damit sich die Anleitung und das Bedienfeld automatisch
      * selbst neu neustarten.
      * Gibt der Nutzer 1 ein, soll der Case 1 gestartet werden, bei 2 Case 2, usw..
-     *
+     * Die Klasse Writer wird aufgerufen, um die neuen Einträge in die Datei zu schreiben.
+     * Die Klasse DeletePerson wird aufgerufen, um Einträge zu löschen.
+     * Unten haben wir einen Catch der die Exception für ungültige Nutzereingabe auffängt.
+     * Wenn das passiert, lassen wir den Scanner-Puffer leeren und starten das Programm neu.
      */
     static void convertNumberToMethod() throws IOException {
         UI.numberoutput();
@@ -46,17 +49,10 @@ public class AddressDatabase {
                     convertNumberToMethod();
                 }
                 case 2 -> {
-                    /**
-                     * Die Klasse Writer wird aufgerufen, um die neuen Einträge in die Datei zu schreiben.
-                     * */
-
                     Writer.write(scan);
                     showinstructions();
                     convertNumberToMethod();
                 }
-                /**
-                 * Die Klasse DeletePerson wird aufgerufen, um Einträge zu löschen
-                 */
                 case 3 -> {
                     Person.deleteThisPerson(scan);
                     showinstructions();
@@ -72,28 +68,20 @@ public class AddressDatabase {
                     convertNumberToMethod();
                 }
             }
-        } catch (InputMismatchException e) {
-            /**
-             * Exception für ungültige Nutzereingabe.
-             */
+        }
+        catch (InputMismatchException e) {
+
             System.out.println("Invalid input, please try something else.");
             scan.nextLine();
-            /**
-             * Scanner-Puffer leeren
-             */
             showinstructions();
-            /**
-             * Programm wird neu gestartet
-             */
-
             convertNumberToMethod();
         }
     }
 
+    /**
+     * Das hier wird einmalig automatisch beim Start des Programms aufgerufen, um es zum Laufen zu bringen.
+     */
     public static void main(String[] args) throws IOException {
-        /**
-         * Das hier wird einmalig automatisch beim Start des Programms aufgerufen, um es zum Laufen zu bringen.
-         */
         showinstructions();
         convertNumberToMethod();
     }
