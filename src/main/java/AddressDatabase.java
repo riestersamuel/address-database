@@ -34,7 +34,7 @@ public class AddressDatabase {
                 case 1:
                     //Hiermit öffnet sich die Anleitung zu den Filtern. Der Nutzer kann wieder eine Zahl eingeben, um zu entscheiden, was er als Nächstes machen will.
                     Filter.showFilterInstructions();
-                    Filter.convertNumberToFilter(scan);
+                    Filter f = new Filter(scan);
                     showinstructions();
                     convertNumberToMethod();
                     break;

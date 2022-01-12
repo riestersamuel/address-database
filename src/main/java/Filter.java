@@ -7,7 +7,11 @@ import java.util.Scanner;
 
 //Klasse um einen Filter auszuwählen, um die Einträge zu filtern.
 public class Filter {
-    //Das ist die Anleitung zum Aussuchen der Filter.
+    static boolean atLeastOneMatchingEntry = false;
+    static String letter;
+
+    static int line;
+
     public static void showFilterInstructions() {
         System.out.println("\nPlease select your filter. Enter number ...");
         System.out.println("0 to filter by the first letter of a person's last name.");
@@ -16,7 +20,12 @@ public class Filter {
         System.out.println("3 to return to main page.\n");
     }
 
-    public static void convertNumberToFilter(Scanner scan) throws IOException {
+    public Filter(Scanner scan) throws IOException {
+        showFilterInstructions();
+        String myFileName = "address.txt";
+        //try catch
+        List<String> allFileEntries = Files.readAllLines(Paths.get(myFileName));
+        letter = scan.next();
         //Der Nutzer soll eine Zahl eingegeben. Diese ruft dann die Methode mit dem Filter auf.
         System.out.println("Please enter a number: ");
 
@@ -25,21 +34,21 @@ public class Filter {
             switch (inputNumber) {
                 case 0:
                     // Wenn 0 eingegeben wird, wird nach dem Anfangsbuchstaben des Nachnamens gefiltert.
-                    firstLetterLastName(scan);
+                    firstLetterLastName();
                     showFilterInstructions();
-                    convertNumberToFilter(scan);
+                    Filter d = new Filter(scan);
                     break;
                 case 1:
                     // Wenn 1 eingegeben wird, wird nach mehreren Anfangsbuchstaben des Nachnamens gefiltert
-                    InitialLetters(scan);
+                    InitialLetters();
                     showFilterInstructions();
-                    convertNumberToFilter(scan);
+                    Filter a = new Filter(scan);
                     break;
                 case 2:
                     // Wenn 2 eingegeben wird, wird nach dem Anfangsbuchstaben des Vornamen gefiltert.
-                    firstLetterFirstName(scan);
+                    firstLetterFirstName();
                     showFilterInstructions();
-                    convertNumberToFilter(scan);
+                    Filter b = new Filter(scan);
                     break;
                 case 3:
                     // Wenn 3 eingegeben wird, wird die Startseite angezeigt.
@@ -52,7 +61,7 @@ public class Filter {
                     // Wenn eine ungültige Zahl eingegeben wird, wird eine Fehlermeldung ausgegeben.
                     System.out.println("Sorry, this number doesn't do anything.");
                     showFilterInstructions();
-                    convertNumberToFilter(scan);
+                    Filter c = new Filter(scan);
             }
         }
         // Exception für ungültige Benutzereingabe
@@ -61,147 +70,109 @@ public class Filter {
             System.out.println("Invalid input, please try something else.");
             scan.nextLine(); // Scanner-Puffer leeren
             showFilterInstructions(); // Filter Switch wird neu gestartet
-            convertNumberToFilter(scan);
+            Filter d = new Filter(scan);
+
         }
     }
-    public static void firstLetterFirstName(Scanner scan) {
-        //Für den Anfangsbuchstaben des Vornamens
-        String letter;
+
+    private void firstLetterFirstName() {
         System.out.println("\nEnter the first letter of the person's first name you're searching for: ");
-        letter = scan.next();
-        try {
-            String myFileName = "address.txt";
-            int line;
-            //Neue Liste mit allen Einträgen der Textdatei wird aufgerufen
-            List<String> allFileEntries = Files.readAllLines(Paths.get(myFileName));
 
-            boolean atLeastOneMatchingEntry = false;
-            for (int i = 0; i < allFileEntries.size(); i++) {
-                String dataAtLineI = allFileEntries.get(i).toUpperCase();
-                String[] newWord = dataAtLineI.split(" ");
-                //Annahme: Wenn mind. 1 Objekt mit dem Buchstabe anfängt, dann keine Fehlermeldung, sonst Fehlermeldung
-                //Also: Wenn nicht mind. ein Objekt mit dem Buhcstabe anfängt -> Fehlermeldung
-                if (newWord[0].startsWith(letter.toUpperCase())) {
-                    atLeastOneMatchingEntry = true;
-                    break;
-                }
+        for (int i = 0; i < allFileEntries.size(); i++) {
+            String dataAtLineI = allFileEntries.get(i).toUpperCase();
+            String[] newWord = dataAtLineI.split(" ");
+            //Annahme: Wenn mind. 1 Objekt mit dem Buchstabe anfängt, dann keine Fehlermeldung, sonst Fehlermeldung
+            //Also: Wenn nicht mind. ein Objekt mit dem Buhcstabe anfängt -> Fehlermeldung
+            if (newWord[0].startsWith(letter.toUpperCase())) {
+                atLeastOneMatchingEntry = true;
+                break;
             }
-            if (!atLeastOneMatchingEntry) {
-                System.out.println("\nSorry, no matching entries were found.");
-            }
-            //Wenn es mindestens einen passenden Eintrag gibt, soll eine passende Nachricht und alle Einträge angezeigt werden.
-            else {
-                System.out.println("\nThese matching entries were found ... ");
-                //Solange i kleiner ist als die Anzahl der Zeilen wird der Name gesucht
-                for (int i = 0; i < allFileEntries.size(); i++) {
-                    String myNextLine = allFileEntries.get(i).toUpperCase();
-                    String[] newWord = myNextLine.split(" ");
-                    if (newWord[0].startsWith(letter.toUpperCase())) {
-                        line = i;//Zeile gefunden
-                        System.out.println(allFileEntries.get(line));
-                    }
-                }
-
-            }
-
-        } catch (IOException ex) {//Fehlermeldung, wenn Datei nicht gefunden wird
-            System.out.println("Error. Data not found.");
         }
-
+        if (!atLeastOneMatchingEntry) {
+            System.out.println("\nSorry, no matching entries were found.");
+        }
+        //Wenn es mindestens einen passenden Eintrag gibt, soll eine passende Nachricht und alle Einträge angezeigt werden.
+        else {
+            System.out.println("\nThese matching entries were found ... ");
+            //Solange i kleiner ist als die Anzahl der Zeilen wird der Name gesucht
+            for (int i = 0; i < allFileEntries.size(); i++) {
+                String myNextLine = allFileEntries.get(i).toUpperCase();
+                String[] newWord = myNextLine.split(" ");
+                if (newWord[0].startsWith(letter.toUpperCase())) {
+                    line = i;//Zeile gefunden
+                    System.out.println(allFileEntries.get(line));
+                }
+            }
+        }
     }
-    public static void InitialLetters(Scanner scan) {
+
+    private static void InitialLetters() {
         //Filter für einen Bereich von Anfangsbuchstaben des Nachnamens
-        String letter;
 
         System.out.println("\nEnter the letters you're searching for (in the format L-S): ");
         /*Anfangs- und Endbuchstabe eingeben. Es werden die Namen gesucht deren Anfangsbuchstaben
          im Alphabet zwischen den eingegebenen Buchstaben liegen.*/
-        letter = scan.next();
-        try {
-            String myFileName = "address.txt";
-            int line;
 
-            //Neue Liste mit allen Einträgen der Textdatei wird aufgerufen
-            List<String> allFileEntries = Files.readAllLines(Paths.get(myFileName));
-
-            boolean atLeastOneMatchingEntry = false;
-            for (int i = 0; i < allFileEntries.size(); i++) {
-                String dataAtLineI = allFileEntries.get(i).toUpperCase();
-                if (dataAtLineI.matches("^[" + letter.toUpperCase() + "].*")) {
-                    atLeastOneMatchingEntry = true;
-                    break;
-                }
+        for (int i = 0; i < allFileEntries.size(); i++) {
+            String dataAtLineI = allFileEntries.get(i).toUpperCase();
+            if (dataAtLineI.matches("^[" + letter.toUpperCase() + "].*")) {
+                atLeastOneMatchingEntry = true;
+                break;
             }
-            // Wenn kein Eintrag mit dem eingegebenen Buchstabenbereich beginnt wird eine Fehlermeldung ausgegeben.
-            if (!atLeastOneMatchingEntry) {
-                System.out.println("\nSorry, no matching entries were found.");
-            }
-            //Wenn es mindestens einen passenden Eintrag gibt, soll eine passende Nachricht und alle Einträge angezeigt werden.
-            else {
-                System.out.println("\nThese matching entries were found:");
-                //Solange i kleiner ist als die Anzahl der Zeilen wird der Name gesucht
-                for (int i = 0; i < allFileEntries.size(); i++) {
-                    // die Textdatei wird zeilenweise ausgelesen und in Großbuchstaben umgewandelt
-                    String myNextLine = allFileEntries.get(i).toUpperCase();
-                    // Jedes Zeichen der Zeile, das durch ein Leerzeichen getrennt ist, wird als einzelner Sting in einem Array gespeichert.
-                    String[] newWord = myNextLine.split(" ");
-                    // Wenn der Sting am Index 0 mit einem der Buchstaben beginnt, wird die Zeile ausgegeben.
-                    if (newWord[1].matches("^[" + letter.toUpperCase() + "].*")) {
-                        line = i;//Zeile gefunden
-                        System.out.println(allFileEntries.get(line));
-                    }
-                }
-            }
-        } catch (IOException ex) {//Fehlermeldung, wenn Datei nicht gefunden wird
-            System.out.println("Error. Data not found." + ex.getMessage());
         }
-
+        // Wenn kein Eintrag mit dem eingegebenen Buchstabenbereich beginnt wird eine Fehlermeldung ausgegeben.
+        if (!atLeastOneMatchingEntry) {
+            System.out.println("\nSorry, no matching entries were found.");
+        }
+        //Wenn es mindestens einen passenden Eintrag gibt, soll eine passende Nachricht und alle Einträge angezeigt werden.
+        else {
+            System.out.println("\nThese matching entries were found:");
+            //Solange i kleiner ist als die Anzahl der Zeilen wird der Name gesucht
+            for (int i = 0; i < allFileEntries.size(); i++) {
+                // die Textdatei wird zeilenweise ausgelesen und in Großbuchstaben umgewandelt
+                String myNextLine = allFileEntries.get(i).toUpperCase();
+                // Jedes Zeichen der Zeile, das durch ein Leerzeichen getrennt ist, wird als einzelner Sting in einem Array gespeichert.
+                String[] newWord = myNextLine.split(" ");
+                // Wenn der Sting am Index 0 mit einem der Buchstaben beginnt, wird die Zeile ausgegeben.
+                if (newWord[1].matches("^[" + letter.toUpperCase() + "].*")) {
+                    line = i;//Zeile gefunden
+                    System.out.println(allFileEntries.get(line));
+                }
+            }
+        }
     }
-    public static void firstLetterLastName(Scanner scan) {
+
+    private static void firstLetterLastName() {
         //Filter für den Anfangsbuchstaben des Nachnamens
-        String letter;
+
         System.out.println("\nEnter the first letter of the person's last name you're searching for: ");
-        letter = scan.next();
-        try {
-            String myFileName = "address.txt";
-            int line;
-            //Neue Liste mit allen Einträgen der Textdatei wird aufgerufen
-            List<String> allFileEntries = Files.readAllLines(Paths.get(myFileName));
 
-            boolean atLeastOneMatchingEntry = false;
-            for (int i = 0; i < allFileEntries.size(); i++) {
-                String dataAtLineI = allFileEntries.get(i).toUpperCase();
-                String[] newWord = dataAtLineI.split(" ");
-                //Annahme: Wenn mind. 1 Objekt mit dem Buchstabe anfängt, dann keine Fehlermeldung, sonst Fehlermeldung
-                //Also: Wenn nicht mind. ein Objekt mit dem Buchstabe anfängt -> Fehlermeldung
-                if (newWord[1].startsWith(letter.toUpperCase())) {
-                    atLeastOneMatchingEntry = true;
-                    break;
-                }
+        for (int i = 0; i < allFileEntries.size(); i++) {
+            String dataAtLineI = allFileEntries.get(i).toUpperCase();
+            String[] newWord = dataAtLineI.split(" ");
+            //Annahme: Wenn mind. 1 Objekt mit dem Buchstabe anfängt, dann keine Fehlermeldung, sonst Fehlermeldung
+            //Also: Wenn nicht mind. ein Objekt mit dem Buchstabe anfängt -> Fehlermeldung
+            if (newWord[1].startsWith(letter.toUpperCase())) {
+                atLeastOneMatchingEntry = true;
+                break;
             }
-            if (!atLeastOneMatchingEntry) {
-                System.out.println("\nSorry, no matching entries were found.");
-            }
-            //Wenn es mindestens einen passenden Eintrag gibt, soll eine passende Nachricht und alle Einträge angezeigt werden.
-            else {
-                System.out.println("\nThese matching entries were found ... ");
-                //Solange i kleiner ist als die Anzahl der Zeilen wird der Name gesucht
-                for (int i = 0; i < allFileEntries.size(); i++) {
-                    String myNextLine = allFileEntries.get(i).toUpperCase();
-                    String[] newWord = myNextLine.split(" ");
-                    if (newWord[1].startsWith(letter.toUpperCase())) {
-                        line = i;//Zeile gefunden
-                        System.out.println(allFileEntries.get(line));
-                    }
-                }
-
-            }
-
-        } catch (IOException ex) {
-            //Fehlermeldung, wenn Datei nicht gefunden wird
-            System.out.println("Error. Data not found." + ex.getMessage());
         }
-
+        if (!atLeastOneMatchingEntry) {
+            System.out.println("\nSorry, no matching entries were found.");
+        }
+        //Wenn es mindestens einen passenden Eintrag gibt, soll eine passende Nachricht und alle Einträge angezeigt werden.
+        else {
+            System.out.println("\nThese matching entries were found ... ");
+            //Solange i kleiner ist als die Anzahl der Zeilen wird der Name gesucht
+            for (int i = 0; i < allFileEntries.size(); i++) {
+                String myNextLine = allFileEntries.get(i).toUpperCase();
+                String[] newWord = myNextLine.split(" ");
+                if (newWord[1].startsWith(letter.toUpperCase())) {
+                    line = i;//Zeile gefunden
+                    System.out.println(allFileEntries.get(line));
+                }
+            }
+        }
     }
-
+}
 }
