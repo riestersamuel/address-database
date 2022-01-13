@@ -1,9 +1,10 @@
+package org.example;
+
 import java.io.IOException;
 import java.util.InputMismatchException;
-import java.util.Scanner;
+
 
 public class AddressDatabase {
-    static final Scanner scan = new Scanner(System.in);
 
     /**
      * Das ist die Anleitung zum Bedienen des Programms. Sie wird standardmäßig beim Starten des Programms angezeigt.
@@ -23,67 +24,78 @@ public class AddressDatabase {
      * Falls der Nutzer etwas anderes als eine Zahl eingibt, soll sich die Methode neustarten.
      */
 
-    static void convertNumberToMethod() throws IOException {
-        UI.numberoutput();
+    static void convertNumberToMethod() {
+        //UI.output("Please enter a number: ");
         //Falls der Nutzer etwas anderes als eine Zahl eingibt, soll sich die Methode neustarten.
         // Das haben wir mithilfe von einem Try-Catch-Block gemacht.
-        try {
-            final int inputNumber = scan.nextInt();
+        boolean finished = false;
+        do {
+            int inputNumber = -1;
+
+            // TODO: Mit Schleife überprüfen ob input valid ist
+
+                inputNumber = UI.inputNumber("Please enter a number: ");
+            /*} catch (InputMismatchException e) {
+                //Hier haben wir einen Catch der die Exception für ungültige Nutzereingabe auffängt.
+                //Wenn das passiert, lassen wir den Scanner-Puffer leeren und starten das Programm neu.
+                System.out.println("Invalid input, please try something else.");
+                //scan.nextLine();
+                showinstructions();
+                //convertNumberToMethod();
+            }*/
+
+
             switch (inputNumber) {
                 case 0 -> {
                     System.out.println("\nCurrent person entries:");
                     //Die Klasse Reader wird aufgerufen, um die Einträge aus der Datei zu lesen.
-                    Reader.read();
+                    ReaderWriter.read();
                     //Wir haben auch Code geschrieben, damit sich die Anleitung und das Bedienfeld automatisch
                     //selbst neu neustarten.
                     showinstructions();
-                    convertNumberToMethod();
+                    //convertNumberToMethod();
                 }
                 case 1 -> {
                     UI.showFilterInstructions();
-                    Filter f = new Filter(scan);
+                    Filter f = new Filter();
+                    // Methode returns boolean | true => wiederholt ODER false => geht normal weiter
+                    // hier ne Schleife
+                    // do while (so lange bis false zurück kommt) // Also so lange bis ne 3 kommt
                     showinstructions();
-                    convertNumberToMethod();
+                    //convertNumberToMethod();
                 }
                 case 2 -> {
                     //Die Klasse Writer wird aufgerufen, um die neuen Einträge in die Datei zu schreiben.
-                    Writer.write(scan);
+                    ReaderWriter.write();
                     showinstructions();
-                    convertNumberToMethod();
+                    //convertNumberToMethod();
                 }
                 case 3 -> {
                     //Die Klasse DeletePerson wird aufgerufen, um Einträge zu löschen.
-                    Person.deleteThisPerson(scan);
+                    Person.deleteThisPerson();
                     showinstructions();
-                    convertNumberToMethod();
+                    //convertNumberToMethod();
                 }
                 case 4 -> {
                     System.out.println("\nShutting down...");
-                    System.exit(0);
+                    finished = true;
+                    //System.exit(0);
                 }
                 default -> {
                     System.out.println("\nSorry, this number doesn't do anything.");
                     showinstructions();
-                    convertNumberToMethod();
+                    //convertNumberToMethod();
                 }
             }
-        }
-
-        //Hier haben wir einen Catch der die Exception für ungültige Nutzereingabe auffängt.
-        //Wenn das passiert, lassen wir den Scanner-Puffer leeren und starten das Programm neu.
-        catch (InputMismatchException e) {
-            System.out.println("Invalid input, please try something else.");
-            scan.nextLine();
-            showinstructions();
-            convertNumberToMethod();
-        }
+        } while (!finished);
     }
+
 
     /**
      * Das hier wird einmalig automatisch beim Start des Programms aufgerufen, um es zum Laufen zu bringen.
      * Danach läuft es weiter, bis man es stoppt.
      */
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         showinstructions();
         convertNumberToMethod();
     }

@@ -1,3 +1,6 @@
+package org.example;
+
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class UI {
@@ -13,8 +16,8 @@ public class UI {
         System.out.println("3 to return to main page.\n");
     }
 
-    public static void numberoutput() {
-        System.out.println("Please enter a number: ");
+    public static void output(String s) {
+        System.out.println(s);
     }
 
     public static void wrongNumber() {
