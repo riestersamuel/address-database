@@ -3,8 +3,12 @@ package org.example;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+/**
+ * Managet Eingaben und Ausgaben
+ */
 public class UI {
-    static Filter filter = new Filter();
+    static final Scanner scan = new Scanner(System.in);
+    //static Filter filter = new Filter();
     /**
      * Filter instructions
      */
@@ -20,20 +24,31 @@ public class UI {
         System.out.println(s);
     }
 
-    public static void wrongNumber() {
-        System.out.println("Invalid input, please try something else.");
-    }
-    public static void invalidInput(){
-        System.out.println("Sorry, this number doesn't do anything.");
-    }
-
     /**
      * Scanner
      */
-    public static void scanletter(Scanner scan){
-        String letter;
-        letter = scan.next();
-        System.out.println(filter.firstLetterFirstName(letter));
+
+    public static String inputLine(String s) {
+        System.out.print(s);
+        return scan.nextLine().trim();
     }
 
+    public static String input(String s) {
+        System.out.print(s);
+        return scan.next().trim();
+    }
+
+    public static int inputNumber(String s) {
+        System.out.print(s);
+        String stringInput = scan.nextLine();
+        int intName = -1;
+
+        try {
+            intName = Integer.parseInt(stringInput);
+        } catch(NumberFormatException | InputMismatchException e) {
+            System.out.println("Invalid input, please try something else.\n" + e);
+        }
+
+        return intName;
+    }
 }

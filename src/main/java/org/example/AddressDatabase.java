@@ -34,7 +34,7 @@ public class AddressDatabase {
 
             // TODO: Mit Schleife überprüfen ob input valid ist
 
-                inputNumber = UI.inputNumber("Please enter a number: ");
+            inputNumber = UI.inputNumber("Please enter a number: ");
             /*} catch (InputMismatchException e) {
                 //Hier haben wir einen Catch der die Exception für ungültige Nutzereingabe auffängt.
                 //Wenn das passiert, lassen wir den Scanner-Puffer leeren und starten das Programm neu.
