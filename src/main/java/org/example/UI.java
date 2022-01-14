@@ -4,7 +4,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
- * Managet Eingaben und Ausgaben
+ * Mit dieser Klasse regeln wir alle Eingaben und Ausgaben
  */
 public class UI {
     static Scanner scan = new Scanner(System.in);
@@ -19,6 +19,8 @@ public class UI {
         System.out.println("2 to filter by the first letter of a person's first name.");
         System.out.println("3 to return to main page.\n");
     }
+
+    public static void noMatchingEntries(){System.out.println("\nSorry, no matching entries were found.");}
 
     public static void output(String s) {
         System.out.println(s);

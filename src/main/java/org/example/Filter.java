@@ -92,7 +92,7 @@ public class Filter {
             }
         }
         if (!atLeastOneMatchingEntry) {
-            System.out.println("\nSorry, no matching entries were found.");
+            UI.noMatchingEntries();
         }
     }
 
@@ -113,13 +113,12 @@ public class Filter {
             }
         }
         if (!atLeastOneMatchingEntry) {
-            System.out.println("\nSorry, no matching entries were found.");
+            UI.noMatchingEntries();
         }
 
     }
 
-     public String[] firstLetterFirstName() {
-        //System.out.println("\nEnter the first letter of the person's first name you're searching for: ");
+     public List<String> firstLetterFirstName() {
 
         String letter = UI.input("Enter the first letter of the person's first name you're searching for: ");
         List<String>  entries = new ArrayList<>();
