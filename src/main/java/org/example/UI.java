@@ -1,6 +1,7 @@
 package org.example;
 
 import java.util.InputMismatchException;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -9,6 +10,7 @@ import java.util.Scanner;
 public class UI {
     static Scanner scan = new Scanner(System.in);
     //static Filter filter = new Filter();
+
     /**
      * Filter instructions
      */
@@ -20,7 +22,9 @@ public class UI {
         System.out.println("3 to return to main page.\n");
     }
 
-    public static void noMatchingEntries(){System.out.println("\nSorry, no matching entries were found.");}
+    public static void noMatchingEntries() {
+        System.out.println("\nSorry, no matching entries were found.");
+    }
 
     public static void output(String s) {
         System.out.println(s);
@@ -50,10 +54,17 @@ public class UI {
 
         try {
             intName = Integer.parseInt(stringInput);
-        } catch(NumberFormatException | InputMismatchException e) {
-            System.out.println("Invalid input, please try something else.\n" + e);
+        } catch (NumberFormatException | InputMismatchException e) {
+            System.out.println("Invalid input, please try something else.\n");
         }
 
         return intName;
+    }
+
+    public static void outputList(List<String> s) {
+        for (int i = 0; i < s.size(); i++) {
+            System.out.println(s.get(i));
+        }
+
     }
 }

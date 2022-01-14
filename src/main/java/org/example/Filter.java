@@ -1,4 +1,5 @@
 package org.example;
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -9,12 +10,13 @@ public class Filter {
     /**
      * Klasse um einen Filter auszuwählen, um die Einträge zu filtern.
      * Der Nutzer soll eine Zahl eingegeben. Diese ruft dann die Methode mit dem Filter auf.
+     *
      * @param line gesuchte Zeile
      * @param atLeastOneMatchingEntry falls kein passender Eintrag gefunden wird
      */
     static boolean atLeastOneMatchingEntry = false;
 
-    List<String>  allFileEntries = new ArrayList<>();
+    List<String> allFileEntries = new ArrayList<>();
     final String myFileName = "address.txt";
     boolean a = false;
 
@@ -35,24 +37,32 @@ public class Filter {
             allFileEntries = Files.readAllLines(Paths.get(myFileName));
         } catch (IOException e) {
             e.printStackTrace();
-            UI.output("Fehler");
+            UI.output("Error");
         }
 
         do {
-        try {
+
 
             int inputNumber = UI.inputNumber("Please enter a number: ");
+            String instruction;
+            List<String> l;
             switch (inputNumber) {
                 case 0:
-                    firstLetterLastName();
+                    instruction = UI.input("Enter the first letter of the person's last name you're searching for:");
+                    l = filterFirstLetter(1, "^[" + instruction.toUpperCase() + "].*");
+                    UI.outputList(l);
                     UI.showFilterInstructions();
                     break;
                 case 1:
-                    InitialLetters();
+                    instruction = UI.input("Enter the letters you're searching for (in the format L-S): ");
+                    l = filterFirstLetter(1, "^[" + instruction.toUpperCase() + "].*");
+                    UI.outputList(l);
                     UI.showFilterInstructions();
                     break;
                 case 2:
-                    firstLetterFirstName();
+                    instruction = UI.input("Enter the first letter of the person's first name you're searching for: ");
+                    l = filterFirstLetter(0, "^" + instruction.toUpperCase() + ".*");// "^A.*"
+                    UI.outputList(l);
                     UI.showFilterInstructions();
                     break;
                 case 3:
@@ -61,24 +71,13 @@ public class Filter {
                     a = true;
                     break;
                 default:
-                    // Wenn eine ungültige Zahl eingegeben wird, wird eine Fehlermeldung ausgegeben.
-                    UI.output("Invalid input, please try something else.");
                     UI.showFilterInstructions();
             }
-        }
-        // Exception für ungültige Benutzereingabe
-        catch (InputMismatchException e) {
-            UI.output("Sorry, this number doesn't do anything.");
-            UI.showFilterInstructions();
-        }
-
-        }while(!a);
+        } while (!a);
     }
 
-    /**
-     * Filter für den Anfangsbuchstaben des Nachnamens
-     */
-
+    /*
+    //Filter für den Anfangsbuchstaben des Nachnamens
     public void firstLetterLastName() {
 
         String letter = UI.input("Enter the first letter of the person's last name you're searching for:");
@@ -96,18 +95,18 @@ public class Filter {
         }
     }
 
-    /**
-     * Filter für einen Bereich von Anfangsbuchstaben des Nachnamens
-     * Anfangs- und Endbuchstabe eingeben. Es werden die Namen gesucht deren Anfangsbuchstaben
-     * im Alphabet zwischen den eingegebenen Buchstaben liegen.
-     */
+     //Filter für einen Bereich von Anfangsbuchstaben des Nachnamens
+     //Anfangs- und Endbuchstabe eingeben. Es werden die Namen gesucht deren Anfangsbuchstaben
+     //im Alphabet zwischen den eingegebenen Buchstaben liegen.
+
 
     public void InitialLetters() {
         String letter = UI.input("Enter the letters you're searching for (in the format L-S): ");
 
         for (int i = 0; i < allFileEntries.size(); i++) {
             String dataAtLineI = allFileEntries.get(i).toUpperCase();
-            if (dataAtLineI.matches("^[" + letter.toUpperCase() + "].*")) {
+            String[] newWord = dataAtLineI.split(" ");
+            if (newWord[1].matches("^[" + letter.toUpperCase() + "].*")) {
                 System.out.println(allFileEntries.get(i));
                 atLeastOneMatchingEntry = true;
             }
@@ -115,25 +114,46 @@ public class Filter {
         if (!atLeastOneMatchingEntry) {
             UI.noMatchingEntries();
         }
-
     }
 
-     public List<String> firstLetterFirstName() {
+     public List<String> firstLetterFirstName(String letter) {
 
-        String letter = UI.input("Enter the first letter of the person's first name you're searching for: ");
+        //String letter = UI.input("Enter the first letter of the person's first name you're searching for: ");
         List<String>  entries = new ArrayList<>();
         for (int i = 0; i < allFileEntries.size(); i++) {
             String myNextLine = allFileEntries.get(i).toUpperCase();
             String[] newWord = myNextLine.split(" ");
             if (newWord[0].startsWith(letter.toUpperCase())) {
-                entries.add(allFileEntries.get(i)+"\n");
+                entries.add(allFileEntries.get(i));
                 atLeastOneMatchingEntry = true;
             }
         }
         if (!atLeastOneMatchingEntry) {
             UI.noMatchingEntries();
         }
-        System.out.println(entries);
+        return entries;
+    }*/
+
+    /**
+     * @param option gibt an an welchem Index im Array gefiltert werden soll
+     * @param regex  Kriterien nach denen gefiltert wird
+     * @return gefilterte Einträge werden zurückgegeben
+     */
+
+    public List<String> filterFirstLetter(int option, String regex) {
+
+        List<String> entries = new ArrayList<>();
+        for (int i = 0; i < allFileEntries.size(); i++) {
+            String dataAtLineI = allFileEntries.get(i).toUpperCase();
+            String[] newWord = dataAtLineI.split(" ");
+            if (newWord[option].matches(regex)) {
+                atLeastOneMatchingEntry = true;
+                entries.add(allFileEntries.get(i));
+            }
+        }
+        if (!atLeastOneMatchingEntry) {
+            UI.noMatchingEntries();
+        }
         return entries;
     }
 }

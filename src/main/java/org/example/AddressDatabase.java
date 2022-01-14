@@ -8,6 +8,7 @@ public class AddressDatabase {
      */
 
     public static void main(String[] args) {
+        welcome();
         showinstructions();
         convertNumberToMethod();
     }
@@ -16,17 +17,19 @@ public class AddressDatabase {
      * Das ist die Anleitung zum Bedienen des Programms. Sie wird standardmäßig beim Starten des Programms angezeigt.
      */
 
-    public static void showinstructions() {
-
+    public static void welcome(){
         System.out.println("Welcome to MyAddressBook\n" +
 
-                        "      __...--~~~~~-._   _.-~~~~~--...__\n" +
-                        "    //               `V'               \\\\ \n" +
-                        "   //                 |                 \\\\ \n" +
-                        "  //__...--~~~~~~-._  |  _.-~~~~~~--...__\\\\ \n" +
-                        " //__.....----~~~~._\\ | /_.~~~~----.....__\\\\\n" +
-                        "====================\\\\|//====================\n" +
-                        "                    `---`");
+                "      __...--~~~~~-._   _.-~~~~~--...__\n" +
+                "    //               `V'               \\\\ \n" +
+                "   //                 |                 \\\\ \n" +
+                "  //__...--~~~~~~-._  |  _.-~~~~~~--...__\\\\ \n" +
+                " //__.....----~~~~._\\ | /_.~~~~----.....__\\\\\n" +
+                "====================\\\\|//====================\n" +
+                "                    `---`");
+    }
+
+    public static void showinstructions() {
 
         System.out.println("\nEnter number ...");
         System.out.println("0 to browse person entries.");
@@ -43,8 +46,7 @@ public class AddressDatabase {
      */
 
     static void convertNumberToMethod() {
-        boolean finished = false;
-        do {
+        while(true){
             int inputNumber;
 
             inputNumber = UI.inputNumber("Please enter a number: ");
@@ -71,13 +73,13 @@ public class AddressDatabase {
                 }
                 case 4 -> {
                     System.out.println("\nShutting down...");
-                    finished = true;
+                    System.exit(0);
                 }
                 default -> {
-                    System.out.println("\nSorry, this input doesn't do anything.");
+                    //System.out.println("\nSorry, this input doesn't do anything.");
                     showinstructions();
                 }
             }
-        } while (!finished);
+        }
     }
 }
