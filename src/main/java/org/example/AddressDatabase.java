@@ -17,7 +17,7 @@ public class AddressDatabase {
      * Das ist die Anleitung zum Bedienen des Programms. Sie wird standardmäßig beim Starten des Programms angezeigt.
      */
 
-    public static void welcome(){
+    public static void welcome() {
         System.out.println("Welcome to MyAddressBook\n" +
 
                 "      __...--~~~~~-._   _.-~~~~~--...__\n" +
@@ -46,7 +46,7 @@ public class AddressDatabase {
      */
 
     static void convertNumberToMethod() {
-        while(true){
+        while (true) {
             int inputNumber;
 
             inputNumber = UI.inputNumber("Please enter a number: ");

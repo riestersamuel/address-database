@@ -41,8 +41,6 @@ public class Filter {
         }
 
         do {
-
-
             int inputNumber = UI.inputNumber("Please enter a number: ");
             String instruction;
             List<String> l;

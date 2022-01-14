@@ -10,6 +10,7 @@ import java.util.List;
 public class Person {
     /**
      * Konstruktor um eine neue Person hinzuzufügen.
+     *
      * @param firstName
      * @param lastName
      * @param mail
