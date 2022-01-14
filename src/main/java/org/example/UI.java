@@ -7,7 +7,7 @@ import java.util.Scanner;
  * Managet Eingaben und Ausgaben
  */
 public class UI {
-    static final Scanner scan = new Scanner(System.in);
+    static Scanner scan = new Scanner(System.in);
     //static Filter filter = new Filter();
     /**
      * Filter instructions
@@ -29,16 +29,20 @@ public class UI {
      */
 
     public static String inputLine(String s) {
+        scan = new Scanner(System.in);
         System.out.print(s);
         return scan.nextLine().trim();
     }
 
     public static String input(String s) {
+        scan = new Scanner(System.in);
         System.out.print(s);
         return scan.next().trim();
     }
 
     public static int inputNumber(String s) {
+        scan = new Scanner(System.in);
+
         System.out.print(s);
         String stringInput = scan.nextLine();
         int intName = -1;

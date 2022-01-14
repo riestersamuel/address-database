@@ -10,9 +10,9 @@ import java.util.*;
 public class Filter {
     static boolean atLeastOneMatchingEntry = false;
 
-    List<String> allFileEntries = new ArrayList<>();
+    List<String>  allFileEntries = new ArrayList<>();
     static int line;
-    final String myFileName = "address.txt";
+     final String myFileName = "address.txt";
 
     public Filter() {
 
@@ -99,7 +99,6 @@ public class Filter {
     public void InitialLetters() {
         //Filter für einen Bereich von Anfangsbuchstaben des Nachnamens
 
-        System.out.println("\nEnter the letters you're searching for (in the format L-S): ");
         /*Anfangs- und Endbuchstabe eingeben. Es werden die Namen gesucht deren Anfangsbuchstaben
          im Alphabet zwischen den eingegebenen Buchstaben liegen.*/
         //letter = scan.next();
@@ -119,7 +118,7 @@ public class Filter {
 
     }
 
-    public String[] firstLetterFirstName() {
+     public String[] firstLetterFirstName() {
         //System.out.println("\nEnter the first letter of the person's first name you're searching for: ");
 
         String letter = UI.input("Enter the first letter of the person's first name you're searching for: ");

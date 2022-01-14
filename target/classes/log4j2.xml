@@ -11,9 +11,9 @@
     <Loggers>
 
         <!-- You my want to define class or package level per-logger rules -->
-        <!--Logger name="org.example.App" level="debug">
+        <!-- Logger name="org.example.AddressDatabase" level="debug">
             <AppenderRef ref="A1"/>
-        </Logger-->
+        </Logger -->
         <Root level="info">
             <AppenderRef ref="STDOUT"/>
         </Root>
