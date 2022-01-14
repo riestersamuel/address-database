@@ -9,21 +9,22 @@ import java.io.IOException;
  * Klasse um Text in einer Datei abzuspeichern
  */
 public class ReaderWriter {
+    /**
+     * Diese Methode erstellt neue Einträge in der Textdatei
+     */
     public static void write() {
-        //Klasse NewPerson wird aufgerufen, um neue Einträge zu erstellen.
+
         Person person = new Person();
         String firstname = person.firstName;
         String mail = person.mail;
         String number = person.number;
-        String secondname = person.secondName;
+        String secondname = person.lastName;
 
         try {
-            // neuer Filewriter wird erstellt
+
             FileWriter myWriter = new FileWriter("address.txt", true);
             // Die Einträge werden in einer Datei gespeichert.
             myWriter.write(firstname + " " + secondname + ", mail: " + mail + ", number: " + number + " " + '\n');
-
-            //schließt den Filewriter
             myWriter.close();
 
         } catch (IOException e) {
@@ -31,6 +32,11 @@ public class ReaderWriter {
             e.printStackTrace();
         }
     }
+
+    /**
+     * Diese Methode ermöglicht das lesen der Einträge innerhalb der Textdatei
+     */
+
     public static void read() {
 
         try {
