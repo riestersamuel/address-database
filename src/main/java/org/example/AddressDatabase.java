@@ -17,6 +17,17 @@ public class AddressDatabase {
      */
 
     public static void showinstructions() {
+
+        System.out.println("Welcome to MyAddressBook\n" +
+
+                        "      __...--~~~~~-._   _.-~~~~~--...__\n" +
+                        "    //               `V'               \\\\ \n" +
+                        "   //                 |                 \\\\ \n" +
+                        "  //__...--~~~~~~-._  |  _.-~~~~~~--...__\\\\ \n" +
+                        " //__.....----~~~~._\\ | /_.~~~~----.....__\\\\\n" +
+                        "====================\\\\|//====================\n" +
+                        "                    `---`");
+
         System.out.println("\nEnter number ...");
         System.out.println("0 to browse person entries.");
         System.out.println("1 to toggle filtering person entries.");
