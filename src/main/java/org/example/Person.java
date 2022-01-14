@@ -30,16 +30,17 @@ public class Person {
     }
 
     /**
-     * Methode um einen bereits vorhandenen Eintrag zu löschen.
+     * Diese Methode wird genutzt um einen bereits vorhandenen Eintrag zu löschen.
+     * Der Eintrag wird durch Aufrufen einer Liste gesucht und anschließend die ganze Zeile gelöscht.
+     *
+     * @Param deleteName Name dessen Eintrag gelöscht werden soll
+     * @Param myFileName enthält Einträge der Liste
+     * @Param lineToBeDeleted gesuchter Index
      */
 
     public static void deleteThisPerson() {
 
         String deleteName;
-        //System.out.println("Enter the first and last name of the person you want to delete: ");
-        //Name eingeben, wessen Einträge gelöscht werden sollen.
-        //scan.nextLine();
-        //deleteName = scan.nextLine();
         deleteName = UI.inputLine("Enter the first and last name of the person you want to delete: ");
         UI.output(deleteName + " has been deleted!");
 

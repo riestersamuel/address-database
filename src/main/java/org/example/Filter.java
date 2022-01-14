@@ -4,7 +4,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.*;
 
-//Klasse um einen Filter auszuwählen, um die Einträge zu filtern.
+
 public class Filter {
     /**
      * Klasse um einen Filter auszuwählen, um die Einträge zu filtern.
@@ -75,6 +75,10 @@ public class Filter {
         }while(!a);
     }
 
+    /**
+     * Filter für den Anfangsbuchstaben des Nachnamens
+     */
+
     public void firstLetterLastName() {
 
         String letter = UI.input("Enter the first letter of the person's last name you're searching for:");
@@ -92,12 +96,13 @@ public class Filter {
         }
     }
 
-    public void InitialLetters() {
-        //Filter für einen Bereich von Anfangsbuchstaben des Nachnamens
+    /**
+     * Filter für einen Bereich von Anfangsbuchstaben des Nachnamens
+     * Anfangs- und Endbuchstabe eingeben. Es werden die Namen gesucht deren Anfangsbuchstaben
+     * im Alphabet zwischen den eingegebenen Buchstaben liegen.
+     */
 
-        /*Anfangs- und Endbuchstabe eingeben. Es werden die Namen gesucht deren Anfangsbuchstaben
-         im Alphabet zwischen den eingegebenen Buchstaben liegen.*/
-        //letter = scan.next();
+    public void InitialLetters() {
         String letter = UI.input("Enter the letters you're searching for (in the format L-S): ");
 
         for (int i = 0; i < allFileEntries.size(); i++) {

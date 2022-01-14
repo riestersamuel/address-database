@@ -27,7 +27,6 @@ public class UI {
     /**
      * Scanner
      */
-
     public static String inputLine(String s) {
         scan = new Scanner(System.in);
         System.out.print(s);
