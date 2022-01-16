@@ -4,6 +4,8 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class ReaderWriter {
@@ -32,21 +34,32 @@ public class ReaderWriter {
 
     /**
      * Diese Methode ermöglicht das lesen der Einträge innerhalb der Textdatei
+     * @return Textdatei Einträge
      */
+    public static List<String> read() {
 
-    public static void read() {
-
+        List<String> entries = new ArrayList<>();
         try {
             BufferedReader newReader = new BufferedReader(new FileReader("address.txt"));
             String line;
             while ((line = newReader.readLine()) != null) {
-                System.out.println(line);
+                entries.add(line);
             }
             newReader.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
+        return entries;
+    }
 
+    public static void removeEntries() {
+        try {
+            FileWriter fw = new FileWriter("address.txt");
+            fw.write("");
+            fw.close();
+        } catch ( IOException ioex ) {
+            System.out.println("Fehler");
+        }
     }
 }
 

@@ -8,24 +8,13 @@ import java.util.List;
 
 
 public class Person {
-    /**
-     * Konstruktor um eine neue Person hinzuzufügen.
-     *
-     * @param firstName
-     * @param lastName
-     * @param mail
-     * @param number
-     */
+
     String firstName, lastName, mail, number;
 
     public Person() {
-
         this.firstName = UI.inputLine("Enter your first name: ");
-
         this.lastName = UI.inputLine("Enter your last name: ");
-
         this.mail = UI.inputLine("Enter your mail address: ");
-
         this.number = UI.inputLine("Enter your number: ");
         UI.output("You successfully added this person.");
     }

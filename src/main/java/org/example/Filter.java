@@ -22,17 +22,6 @@ public class Filter {
      * case3 Es wird die Startseite angezeigt
      */
     public Filter() {
-
-        /**Der Konstruktor ruft die passende Methode auf, je nach Nutzer Eingabe.
-         * case0 Es wird nach dem Anfangsbuchstaben des Nachnamens gefiltert.
-         * case1 Es wird nach mehreren Anfangsbuchstaben des Nachnamens gefiltert.
-         * case2 Es wird nach dem Anfangsbuchstaben des Vornamen gefiltert.
-         * case3 Es wird die Startseite angezeigt
-         * @param allFileEntries
-         * @param inputNumber
-         * @param a zurück zum Startmenü
-         */
-
         try {
             allFileEntries = Files.readAllLines(Paths.get(myFileName));
         } catch (IOException e) {

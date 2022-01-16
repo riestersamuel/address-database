@@ -54,7 +54,7 @@ public class AddressDatabase {
             switch (inputNumber) {
                 case 0 -> {
                     UI.output("\nCurrent person entries:");
-                    ReaderWriter.read();
+                    UI.outputList(ReaderWriter.read());
                     showInstructions();
 
                 }
@@ -64,7 +64,7 @@ public class AddressDatabase {
                     showInstructions();
                 }
                 case 2 -> {
-                    ReaderWriter.write();
+                    ReaderWriter.write(new Person());
                     showInstructions();
                 }
                 case 3 -> {
