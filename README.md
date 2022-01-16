@@ -1,12 +1,11 @@
 # Installation bzw. Starten des Programms
-1. Laden Sie den Ordner unter [Link] herunter.
-2. Ziehen Sie den Ordner in den Speicherort Ihrer Wahl.
+1. Laden Sie den Ordner herunter.
+2. Ziehen Sie den Ordner in den Speicherort Ihrer Wahl und entzippen Sie ihn gegebenenfalls.
 3. Dieser Schritt hängt von Ihrem Betriebssystem ab.
    1. Auf Mac: Klicken Sie den Ordner mit der rechten Maustaste an und wählen Sie: "Neues Terminal beim Ordner öffnen".
-   2. Auf Windows: Navigieren Sie in den Ordner und
-   machen Sie einen Rechtsklick, während Sie die Shift-Taste gedrückt halten. Dann wählen Si
-   3. "PowerShell-Fenster hier öffnen".
-5. Geben Sie folgenden Command in die Konsole ein: "java -jar addressdatabase.jar".
+   2. Auf Windows: Navigieren Sie in den Ordner, in dem sich die Datei befindet. Klicken Sie
+   nun den Dateipfad an und geben hier "cmd" ein. Wenn Sie jetzt Enter drücken, landen Sie in der Eingabeaufforderung.
+5. Geben Sie folgenden Command ein: "java -jar addressdatabase.jar".
 6. Sie können das Programm jetzt benutzen.
 # Bedienungsanleitung
 ## Hauptmenü
