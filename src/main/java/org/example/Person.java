@@ -22,7 +22,7 @@ public class Person {
 
         this.firstName = UI.inputLine("Enter your first name: ");
 
-        this.lastName = UI.inputLine("Enter your second name: ");
+        this.lastName = UI.inputLine("Enter your last name: ");
 
         this.mail = UI.inputLine("Enter your mail address: ");
 
