@@ -63,7 +63,7 @@ public class Filter {
                     UI.showFilterInstructions();
                     break;
                 case 3:
-                    AddressDatabase.showinstructions();
+                    AddressDatabase.showInstructions();
                     AddressDatabase.convertNumberToMethod();
                     a = true;
                     break;

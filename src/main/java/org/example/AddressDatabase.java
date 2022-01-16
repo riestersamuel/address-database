@@ -9,7 +9,7 @@ public class AddressDatabase {
 
     public static void main(String[] args) {
         welcome();
-        showinstructions();
+        showInstructions();
         convertNumberToMethod();
     }
 
@@ -29,7 +29,7 @@ public class AddressDatabase {
                 "                    `---`");
     }
 
-    public static void showinstructions() {
+    public static void showInstructions() {
 
         UI.output("\nEnter number ...");
         UI.output("0: to browse person entries.");
@@ -55,29 +55,29 @@ public class AddressDatabase {
                 case 0 -> {
                     UI.output("\nCurrent person entries:");
                     ReaderWriter.read();
-                    showinstructions();
+                    showInstructions();
 
                 }
                 case 1 -> {
                     UI.showFilterInstructions();
                     Filter f = new Filter();
-                    showinstructions();
+                    showInstructions();
                 }
                 case 2 -> {
                     ReaderWriter.write();
-                    showinstructions();
+                    showInstructions();
                 }
                 case 3 -> {
                     Person.deleteThisPerson();
-                    showinstructions();
+                    showInstructions();
                 }
                 case 4 -> {
                     UI.output("\nShutting down...");
                     System.exit(0);
                 }
                 default -> {
-                    UI.output("\nSorry, this input doesn't do anything.");
-                    showinstructions();
+                   // UI.output("\nSorry, this input doesn't do anything.");
+                    showInstructions();
                 }
             }
         }
