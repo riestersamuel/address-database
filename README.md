@@ -1,8 +1,8 @@
 # Installation bzw. Starten des Programms
-1. Laden Sie den Ordner herunter.
-2. Ziehen Sie den Ordner in den Speicherort Ihrer Wahl und entzippen Sie ihn gegebenenfalls.
+1. Laden Sie den gezippten Ordner aus dem Gitlab herunter.
+2. Ziehen Sie den Ordner in den Speicherort Ihrer Wahl und entzippen Sie ihn.
 3. Dieser Schritt hängt von Ihrem Betriebssystem ab.
-   1. Auf Mac: Klicken Sie den Ordner mit der rechten Maustaste an und wählen Sie: "Neues Terminal beim Ordner öffnen".
+   1. Auf Mac: Klicken Sie den neuen Ordner mit der rechten Maustaste an und wählen Sie: "Neues Terminal beim Ordner öffnen".
    2. Auf Windows: Navigieren Sie in den Ordner, in dem sich die Datei befindet. Klicken Sie
    nun den Dateipfad an und geben hier "cmd" ein. Wenn Sie jetzt Enter drücken, landen Sie in der Eingabeaufforderung.
 5. Geben Sie folgenden Command ein: "java -jar addressdatabase.jar".
