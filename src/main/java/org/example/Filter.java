@@ -46,19 +46,19 @@ public class Filter {
             switch (inputNumber) {
                 case 0:
                     instruction = UI.input("Enter the first letter of the person's last name you're searching for:");
-                    l = filterFirstLetter(1, "^[" + instruction.toUpperCase() + "].*");
+                    l = allFilter(1, "^[" + instruction.toUpperCase() + "].*");
                     UI.outputList(l);
                     UI.showFilterInstructions();
                     break;
                 case 1:
                     instruction = UI.input("Enter the letters you're searching for (in the format L-S): ");
-                    l = filterFirstLetter(1, "^[" + instruction.toUpperCase() + "].*");
+                    l = allFilter(1, "^[" + instruction.toUpperCase() + "].*");
                     UI.outputList(l);
                     UI.showFilterInstructions();
                     break;
                 case 2:
                     instruction = UI.input("Enter the first letter of the person's first name you're searching for: ");
-                    l = filterFirstLetter(0, "^" + instruction.toUpperCase() + ".*");// "^A.*"
+                    l = allFilter(0, "^" + instruction.toUpperCase() + ".*");// "^A.*"
                     UI.outputList(l);
                     UI.showFilterInstructions();
                     break;
@@ -79,7 +79,7 @@ public class Filter {
      * @return gefilterte Einträge werden zurückgegeben
      */
 
-    public List<String> filterFirstLetter(int option, String regex) {
+    public List<String> allFilter(int option, String regex) {
 
         List<String> entries = new ArrayList<>();
         for (int i = 0; i < allFileEntries.size(); i++) {

@@ -9,7 +9,7 @@ public class FilterTest extends TestCase {
     @Test
     public void Filter() {
         Filter firstTest = new Filter();
-        firstTest.filterFirstLetter(0, "^H.*");
-        Assert.assertEquals("Hallo", firstTest.filterFirstLetter(0, "^A.*"));
+        firstTest.allFilter(0, "^H.*");
+        Assert.assertEquals("Hallo", firstTest.allFilter(0, "^A.*"));
     }
 }
