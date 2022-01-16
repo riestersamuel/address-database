@@ -74,6 +74,15 @@ public class Filter {
         } while (!a);
     }
 
+    public Filter(int i){
+        try {
+            allFileEntries = Files.readAllLines(Paths.get(myFileName));
+        } catch (IOException e) {
+            e.printStackTrace();
+            UI.output("Error");
+        }
+    }
+
     /**
      * @param option gibt an an welchem Index im Array gefiltert werden soll (also ob Vor- oder Nachname)
      * @param regex  Kriterien (Buchstabe) nach denen gefiltert wird
