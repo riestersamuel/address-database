@@ -74,8 +74,8 @@ public class Filter {
     }
 
     /**
-     * @param option gibt an an welchem Index im Array gefiltert werden soll
-     * @param regex  Kriterien nach denen gefiltert wird
+     * @param option gibt an an welchem Index im Array gefiltert werden soll (also ob Vor- oder Nachname)
+     * @param regex  Kriterien (Buchstabe) nach denen gefiltert wird
      * @return gefilterte Einträge werden zurückgegeben
      */
 
