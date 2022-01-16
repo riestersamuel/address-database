@@ -31,6 +31,21 @@ public class Person {
     }
 
     /**
+     * Konstruktor um eine neue Person hinzuzufügen.
+     *
+     * @param firstName Vorname
+     * @param lastName Nachname
+     * @param mail E-Mail Addresse
+     * @param number Telefonnummer
+     */
+    public Person(String firstName, String lastName, String mail, String number){
+        this.firstName=firstName;
+        this.lastName=lastName;
+        this.mail=mail;
+        this.number=number;
+    }
+
+    /**
      * Diese Methode wird genutzt um einen bereits vorhandenen Eintrag zu löschen.
      * Der Eintrag wird durch Aufrufen einer Liste gesucht und anschließend die ganze Zeile gelöscht.
      *

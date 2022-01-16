@@ -10,9 +10,8 @@ public class ReaderWriter {
     /**
      * Diese Methode erstellt neue Einträge in der Textdatei
      */
-    public static void write() {
+    public static void write(Person person) {
 
-        Person person = new Person();
         String firstname = person.firstName;
         String mail = person.mail;
         String number = person.number;
@@ -22,7 +21,7 @@ public class ReaderWriter {
 
             FileWriter myWriter = new FileWriter("address.txt", true);
             // Die Einträge werden in einer Datei gespeichert.
-            myWriter.write(firstname + " " + secondname + ", mail: " + mail + ", number: " + number + " " + '\n');
+            myWriter.write(firstname + " " + secondname + ", mail: " + mail + ", number: " + number + '\n');
             myWriter.close();
 
         } catch (IOException e) {

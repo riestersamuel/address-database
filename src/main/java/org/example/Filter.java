@@ -5,21 +5,22 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.*;
 
-
+/**
+ * Klasse um einen Filter auszuwählen, um die Einträge zu filtern.
+ * Der Nutzer soll eine Zahl eingegeben. Diese ruft dann die Methode mit dem Filter auf.
+ */
 public class Filter {
-    /**
-     * Klasse um einen Filter auszuwählen, um die Einträge zu filtern.
-     * Der Nutzer soll eine Zahl eingegeben. Diese ruft dann die Methode mit dem Filter auf.
-     * @param line gesuchte Zeile
-     * @param atLeastOneMatchingEntry falls kein passender Eintrag gefunden wird
-     */
-    static boolean atLeastOneMatchingEntry = false;
 
     List<String> allFileEntries = new ArrayList<>();
     final String myFileName = "address.txt";
     boolean a = false;
 
-
+    /**Der Konstruktor ruft die passende Methode auf, je nach Nutzer Eingabe.
+     * case0 Es wird nach dem Anfangsbuchstaben des Nachnamens gefiltert.
+     * case1 Es wird nach mehreren Anfangsbuchstaben des Nachnamens gefiltert.
+     * case2 Es wird nach dem Anfangsbuchstaben des Vornamen gefiltert.
+     * case3 Es wird die Startseite angezeigt
+     */
     public Filter() {
 
         /**Der Konstruktor ruft die passende Methode auf, je nach Nutzer Eingabe.
@@ -80,7 +81,7 @@ public class Filter {
      */
 
     public List<String> allFilter(int option, String regex) {
-
+        boolean atLeastOneMatchingEntry = false;
         List<String> entries = new ArrayList<>();
         for (int i = 0; i < allFileEntries.size(); i++) {
             String dataAtLineI = allFileEntries.get(i).toUpperCase();
