@@ -10,7 +10,6 @@ public class Filter {
     /**
      * Klasse um einen Filter auszuwählen, um die Einträge zu filtern.
      * Der Nutzer soll eine Zahl eingegeben. Diese ruft dann die Methode mit dem Filter auf.
-     *
      * @param line gesuchte Zeile
      * @param atLeastOneMatchingEntry falls kein passender Eintrag gefunden wird
      */
@@ -73,64 +72,6 @@ public class Filter {
             }
         } while (!a);
     }
-
-    /*
-    //Filter für den Anfangsbuchstaben des Nachnamens
-    public void firstLetterLastName() {
-
-        String letter = UI.input("Enter the first letter of the person's last name you're searching for:");
-
-        for (int i = 0; i < allFileEntries.size(); i++) {
-            String dataAtLineI = allFileEntries.get(i).toUpperCase();
-            String[] newWord = dataAtLineI.split(" ");
-            if (newWord[1].startsWith(letter.toUpperCase())) {
-                System.out.println(allFileEntries.get(i));
-                atLeastOneMatchingEntry = true;
-            }
-        }
-        if (!atLeastOneMatchingEntry) {
-            UI.noMatchingEntries();
-        }
-    }
-
-     //Filter für einen Bereich von Anfangsbuchstaben des Nachnamens
-     //Anfangs- und Endbuchstabe eingeben. Es werden die Namen gesucht deren Anfangsbuchstaben
-     //im Alphabet zwischen den eingegebenen Buchstaben liegen.
-
-
-    public void InitialLetters() {
-        String letter = UI.input("Enter the letters you're searching for (in the format L-S): ");
-
-        for (int i = 0; i < allFileEntries.size(); i++) {
-            String dataAtLineI = allFileEntries.get(i).toUpperCase();
-            String[] newWord = dataAtLineI.split(" ");
-            if (newWord[1].matches("^[" + letter.toUpperCase() + "].*")) {
-                System.out.println(allFileEntries.get(i));
-                atLeastOneMatchingEntry = true;
-            }
-        }
-        if (!atLeastOneMatchingEntry) {
-            UI.noMatchingEntries();
-        }
-    }
-
-     public List<String> firstLetterFirstName(String letter) {
-
-        //String letter = UI.input("Enter the first letter of the person's first name you're searching for: ");
-        List<String>  entries = new ArrayList<>();
-        for (int i = 0; i < allFileEntries.size(); i++) {
-            String myNextLine = allFileEntries.get(i).toUpperCase();
-            String[] newWord = myNextLine.split(" ");
-            if (newWord[0].startsWith(letter.toUpperCase())) {
-                entries.add(allFileEntries.get(i));
-                atLeastOneMatchingEntry = true;
-            }
-        }
-        if (!atLeastOneMatchingEntry) {
-            UI.noMatchingEntries();
-        }
-        return entries;
-    }*/
 
     /**
      * @param option gibt an an welchem Index im Array gefiltert werden soll

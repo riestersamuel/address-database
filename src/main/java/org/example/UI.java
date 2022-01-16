@@ -7,13 +7,10 @@ import java.util.Scanner;
 /**
  * Mit dieser Klasse regeln wir alle Eingaben und Ausgaben
  */
+
 public class UI {
     static Scanner scan = new Scanner(System.in);
-    //static Filter filter = new Filter();
 
-    /**
-     * Filter instructions
-     */
     public static void showFilterInstructions() {
         System.out.println("\nPlease select your filter. Enter number ...");
         System.out.println("0 to filter by the first letter of a person's last name.");

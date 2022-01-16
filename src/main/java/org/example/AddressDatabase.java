@@ -18,7 +18,7 @@ public class AddressDatabase {
      */
 
     public static void welcome() {
-        System.out.println("Welcome to MyAddressBook\n" +
+        UI.output("Welcome to MyAddressBook\n" +
 
                 "      __...--~~~~~-._   _.-~~~~~--...__\n" +
                 "    //               `V'               \\\\ \n" +
@@ -31,12 +31,12 @@ public class AddressDatabase {
 
     public static void showinstructions() {
 
-        System.out.println("\nEnter number ...");
-        System.out.println("0 to browse person entries.");
-        System.out.println("1 to toggle filtering person entries.");
-        System.out.println("2 to create a new person entry.");
-        System.out.println("3 to delete a person entry.");
-        System.out.println("4 to exit this program.\n");
+        UI.output("\nEnter number ...");
+        UI.output("0: to browse person entries.");
+        UI.output("1: to toggle filtering person entries.");
+        UI.output("2: to create a new person entry.");
+        UI.output("3: to delete a person entry.");
+        UI.output("4: to exit this program.\n");
     }
 
     /**
@@ -53,7 +53,7 @@ public class AddressDatabase {
 
             switch (inputNumber) {
                 case 0 -> {
-                    System.out.println("\nCurrent person entries:");
+                    UI.output("\nCurrent person entries:");
                     ReaderWriter.read();
                     showinstructions();
 
@@ -72,11 +72,11 @@ public class AddressDatabase {
                     showinstructions();
                 }
                 case 4 -> {
-                    System.out.println("\nShutting down...");
+                    UI.output("\nShutting down...");
                     System.exit(0);
                 }
                 default -> {
-                    //System.out.println("\nSorry, this input doesn't do anything.");
+                    UI.output("\nSorry, this input doesn't do anything.");
                     showinstructions();
                 }
             }
